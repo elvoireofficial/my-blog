@@ -1,0 +1,24 @@
+baseURL = 'http://localhost:1313/'
+languageCode = 'en-us'
+title = 'Elvoire'
+theme = 'PaperMod'
+
+[params]
+  env = 'production'
+  description = "Home organization tips and product recommendations"
+  ShowShareButtons = true
+  ShowReadingTime = true
+  ShowPostNavLinks = true
+  ShowBreadCrumbs = true
+
+[[menu.main]]
+  identifier = 'home'
+  name = 'Home'
+  url = '/'
+  weight = 10
+
+[[menu.main]]
+  identifier = 'posts'
+  name = 'Blog'
+  url = '/posts/'
+  weight = 20
