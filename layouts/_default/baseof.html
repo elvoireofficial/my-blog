@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+{{ partial "head.html" . }}
+<body>
+
+  {{ partial "header.html" . }}
+
+  <div class="header-spacer" id="headerSpacer"></div>
+
+  <main>
+    {{ block "main" . }}
+    {{ end }}
+  </main>
+
+  {{ partial "footer.html" . }}
+
+  {{ $js := resources.Get "js/main.js" }}
+  <script src="{{ $js.RelPermalink }}?v={{ now.Unix }}"></script>
+</body>
+</html>

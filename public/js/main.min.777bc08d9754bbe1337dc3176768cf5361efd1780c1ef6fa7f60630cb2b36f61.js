@@ -1,0 +1,1 @@
+document.addEventListener("DOMContentLoaded",function(){const n=document.querySelector(".secondary-hero-slider .slider-wrapper"),e=document.querySelectorAll(".secondary-hero-slider .slide");let t=0;const s=4e3;n&&e.length>0&&setInterval(()=>{t=(t+1)%e.length,n.style.transform=`translateX(-${t*(100/e.length)}%)`},s)})

@@ -1,0 +1,1 @@
+document.addEventListener("scroll",function(){const n=document.querySelector(".secondary-hero-container"),s=document.querySelector(".secondary-hero-img");if(!n||!s)return;const e=n.getBoundingClientRect(),t=window.innerHeight;if(e.top<t&&e.bottom>0){const n=(t-e.top)/(t+e.height),o=1+n*.08;s.style.transform=`scale(${o})`}})

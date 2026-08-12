@@ -1,0 +1,1 @@
+document.addEventListener("DOMContentLoaded",function(){const e=document.querySelectorAll(".secondary-hero-slider .slide");let t=0;const n=4e3;e.length>0&&setInterval(()=>{e[t].classList.remove("active"),t=(t+1)%e.length,e[t].classList.add("active")},n)})

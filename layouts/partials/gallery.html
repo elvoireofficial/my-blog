@@ -1,200 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-	<meta name="generator" content="Hugo 0.164.0"><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>ÉLVOIRE - ÉLVOIRE</title>
-
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600&display=swap" rel="stylesheet">
-
-  <link rel="stylesheet" href="http://localhost:1313/css/style.css?v=1786564882">
-
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
-</head>
-<body>
-
-  <header class="site-header" id="siteHeader">
-
-  
-  <div class="fashion-header-block" id="fashionHeaderBlock">
-
-    
-    <div class="fashion-promo-bar">
-      <button class="mode-switch">
-        <span class="switch-label active" data-value="fashion">Fashion</span>
-        <span class="switch-divider">/</span>
-        <span class="switch-label" data-value="beauty">Beauty</span>
-      </button>
-    </div>
-
-    <div class="top-bar">
-
-      <button class="nav-toggle" id="navToggleFashion" aria-label="Menu">
-        <span></span><span></span><span></span>
-      </button>
-
-      <div class="switch-wrapper">
-        <button class="mode-switch">
-          <span class="switch-label active" data-value="fashion">Fashion</span>
-          <span class="switch-divider">/</span>
-          <span class="switch-label" data-value="beauty">Beauty</span>
-        </button>
-      </div>
-
-      <div class="logo-wrapper">
-        <a href="/" class="site-logo">ÉLVOIRE</a>
-      </div>
-
-      <div class="search-wrapper">
-        <button class="search-icon" id="searchToggleFashion" aria-label="Search">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.5">
-            <circle cx="11" cy="11" r="7"></circle>
-            <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
-          </svg>
-        </button>
-      </div>
-    </div>
-
-    <nav class="fashion-nav-row" id="fashionNavRow">
-      <a href="/" class="nav-logo-small">ÉLVOIRE</a>
-      <ul class="nav-links fashion-nav" id="fashionNav">
-        <li><a href="#">Monogram 130 <span class="nav-arrow">›</span></a></li>
-        <li><a href="#">The Collections <span class="nav-arrow">›</span></a></li>
-        <li><a href="#">Speedy <span class="nav-arrow">›</span></a></li>
-        <li><a href="#">Alma <span class="nav-arrow">›</span></a></li>
-        <li><a href="#">Neverfull <span class="nav-arrow">›</span></a></li>
-        <li><a href="#">Noé <span class="nav-arrow">›</span></a></li>
-        <li><a href="#">Keepall <span class="nav-arrow">›</span></a></li>
-        <li><a href="#">Small Leather Goods <span class="nav-arrow">›</span></a></li>
-      </ul>
-    </nav>
-
-  </div>
-
-  
-  <div class="beauty-header-block" id="beautyHeaderBlock">
-
-    <div class="beauty-promo-bar">
-      <button class="mode-switch beauty-switch">
-        <span class="switch-label active" data-value="fashion">Fashion</span>
-        <span class="switch-divider">/</span>
-        <span class="switch-label" data-value="beauty">Beauty</span>
-      </button>
-      <p class="promo-text">Radiance Begins With Ritual</p>
-    </div>
-
-    <div class="beauty-main-row">
-
-      <div class="beauty-inner">
-
-        <button class="nav-toggle" id="navToggleBeauty" aria-label="Menu">
-          <span></span><span></span><span></span>
-        </button>
-
-        <div class="logo-wrapper">
-          <a href="/" class="site-logo beauty-logo">ÉLVOIRE</a>
-        </div>
-
-        <div class="right-wrapper">
-          <button class="search-icon" id="searchToggleBeauty" aria-label="Search">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.5">
-              <circle cx="11" cy="11" r="7"></circle>
-              <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
-            </svg>
-          </button>
-        </div>
-
-      </div>
-
-      <nav class="beauty-nav-wrap" id="beautyNavWrap">
-        <ul class="nav-links beauty-nav" id="beautyNav">
-          <li><a href="#">New <span class="nav-arrow">›</span></a></li>
-          <li><a href="#">Bestsellers <span class="nav-arrow">›</span></a></li>
-          <li><a href="#">Skincare <span class="nav-arrow">›</span></a></li>
-          <li><a href="#">Makeup <span class="nav-arrow">›</span></a></li>
-          <li><a href="#">Rituals <span class="nav-arrow">›</span></a></li>
-          <li><a href="#">The Brand <span class="nav-arrow">›</span></a></li>
-        </ul>
-      </nav>
-
-    </div>
-
-  </div>
-
-  
-  <div class="search-box" id="searchBox">
-    <form class="search-form" id="searchForm" action="/search" method="GET">
-      <input type="text" name="q" class="search-input" id="searchInput" placeholder="Search..." autocomplete="off">
-    </form>
-    <button class="search-close" id="searchClose">&times;</button>
-  </div>
-
-</header>
-
-  <div class="header-spacer" id="headerSpacer"></div>
-
-  <main>
-    
-<section class="site-hero" id="siteHero">
-
-  
-  <div class="hero-mode hero-mode-fashion" id="fashionHero">
-    <video class="fh-video" autoplay muted loop playsinline poster="/images/fashion-fallback.jpg">
-      <source src="/videos/fashion-hero.mp4" type="video/mp4">
-    </video>
-    <div class="fh-overlay"></div>
-    <div class="fh-content">
-      <span class="eyebrow-label">ÉLVOIRE EDIT</span>
-      <h2 class="hero-heading fh-heading">Style Is a Language Only Some Speak Fluently</h2>
-      <p class="hero-text fh-text">For the woman whose taste needs no explanation — this is fashion, curated with quiet distinction.</p>
-    </div>
-  </div>
-
-   
-  <div class="hero-mode hero-mode-beauty" id="beautyHero">
-
-    
-    <div class="beauty-slide active" data-index="0">
-      <div class="bslide-bg" style="background-image:url('https://images.unsplash.com/photo-1556228720-195a672e8a03?auto=format&fit=crop&w=1600&q=80')"></div>
-      <div class="bslide-box box-right">
-        <h2 class="hero-heading">The Quiet Ritual of Radiant Skin</h2>
-        <p class="hero-text">Some care for their skin. Others understand it. This is skincare for the latter — unhurried, intentional, quietly luxurious.</p>
-        <a href="#" class="hero-cta">Discover The Ritual</a>
-      </div>
-    </div>
-
-    
-    <div class="beauty-slide" data-index="1">
-      <div class="bslide-bg" style="background-image:url('https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?auto=format&fit=crop&w=1600&q=80')"></div>
-      <div class="bslide-box box-left">
-        <h2 class="hero-heading">Colour, Worn With Intention</h2>
-        <p class="hero-text">Not applied to hide, but to reveal what was always there — a quiet confidence, effortlessly refined.</p>
-        <a href="#" class="hero-cta">Explore The Edit</a>
-      </div>
-    </div>
-
-    
-    <div class="beauty-slide" data-index="2">
-      <div class="bslide-bg" style="background-image:url('https://images.unsplash.com/photo-1522337660859-02fbefca4702?auto=format&fit=crop&w=1600&q=80')"></div>
-      <div class="bslide-plain">
-        <h2 class="hero-heading">Every Strand Tells a Story</h2>
-        <p class="hero-text">Beautiful hair isn't accidental — it's a reflection of the care only a discerning few choose to give.</p>
-        <a href="#" class="hero-cta">Discover The Story</a>
-      </div>
-    </div>
-
-    <div class="beauty-progress">
-      <div class="bp-line active" data-index="0"><span></span></div>
-      <div class="bp-line" data-index="1"><span></span></div>
-      <div class="bp-line" data-index="2"><span></span></div>
-    </div>
-
-  </div>
-</section>
-
+<!-- ============================================
+     FASHION GALLERY SECTION
+============================================ -->
 <div class="fashion-mode-content">
   <section class="fashion-gallery-section">
     <div class="fg-container">
@@ -261,15 +67,17 @@
   </section>
 </div>
 
-
+<!-- ============================================
+     BEAUTY GALLERY SECTION
+============================================ -->
 <div class="beauty-mode-content">
   <section class="beauty-gallery-section">
     <div class="bg-container">
       
-      
+      <!-- Main Title (48px, Cronos Pro, Non-Bold) -->
       <h2 class="bg-main-title">THE ART OF RADIANCE</h2>
 
-      
+      <!-- 4 Small Galleries — Infinite Carousel (Ab Upar) -->
       <div class="elv-carousel-wrap">
 
         <button class="elv-nav elv-nav-prev" id="elvPrev" aria-label="Previous">&#8592;</button>
@@ -311,10 +119,10 @@
 
       </div>
 
-      
+      <!-- New Section Heading for Hair Category -->
       <h2 class="bg-main-title" style="margin-top: 60px;">HAIR RITUALS</h2>
 
-      
+      <!-- 2 Big Galleries (Ab Neeche) -->
       <div class="bg-grid-top">
         <a href="#" class="bg-card bg-card-large">
           <div class="bg-image-wrapper">
@@ -335,7 +143,9 @@
     </div>
   </section>
 </div>
-
+<!-- ============================================
+     PROMO BANNER SECTION (Fashion: Image / Beauty: Video)
+============================================ -->
 <div class="fashion-mode-content">
   <section class="promo-banner-section">
     <div class="promo-banner-media-wrap">
@@ -358,7 +168,9 @@
     </div>
   </section>
 </div>
-
+<!-- ============================================
+     THE COMPLETE EDIT (Fashion Only)
+============================================ -->
 <div class="fashion-mode-content">
   <section class="stl-section">
     <div class="stl-container">
@@ -403,7 +215,9 @@
   </section>
 </div>
 
-
+<!-- ============================================
+     THE RITUAL EDIT (Beauty Only)
+============================================ -->
 <div class="beauty-mode-content">
   <section class="stl-section">
     <div class="stl-container">
@@ -447,7 +261,9 @@
     </div>
   </section>
 </div>
-
+<!-- ============================================
+     EDITOR'S PICK (Fashion — Manual Swipe on Mobile)
+============================================ -->
 <div class="fashion-mode-content">
   <section class="epv-section">
     <h2 class="epv-title">Editor's Pick</h2>
@@ -499,7 +315,9 @@
 </div>
  
 
-
+<!-- ============================================
+     EDITOR'S PICK (Beauty: 4 Cards)
+============================================ -->
 <div class="beauty-mode-content">
   <section class="ep-section">
     <div class="ep-container">
@@ -555,7 +373,9 @@
     </div>
   </section>
 </div>
-
+<!-- ============================================
+     NEWSLETTER SECTION (Shared — Fashion & Beauty)
+============================================ -->
 <section class="nl-section">
   <div class="nl-container">
     <h2 class="nl-title">Join The List</h2>
@@ -567,54 +387,3 @@
     </form>
   </div>
 </section>
-
-  </main>
-
-  <footer class="site-footer">
-  <div class="footer-container">
-
-    <div class="footer-col footer-brand">
-      <a href="/" class="footer-logo">ÉLVOIRE</a>
-      <p class="footer-tagline">Fashion & Beauty, curated with quiet distinction.</p>
-    </div>
-
-    <div class="footer-col">
-      <h4 class="footer-heading">Explore</h4>
-      <ul class="footer-links">
-        <li><a href="#">Fashion</a></li>
-        <li><a href="#">Beauty</a></li>
-        <li><a href="#">Editor's Pick</a></li>
-        <li><a href="#">Shop The Look</a></li>
-      </ul>
-    </div>
-
-    <div class="footer-col">
-      <h4 class="footer-heading">Company</h4>
-      <ul class="footer-links">
-        <li><a href="#">About Us</a></li>
-        <li><a href="#">Contact</a></li>
-        <li><a href="#">Privacy Policy</a></li>
-        <li><a href="#">Terms of Use</a></li>
-      </ul>
-    </div>
-
-    <div class="footer-col">
-      <h4 class="footer-heading">Follow</h4>
-      <ul class="footer-links">
-        <li><a href="#">Instagram</a></li>
-        <li><a href="#">Pinterest</a></li>
-        <li><a href="#">TikTok</a></li>
-      </ul>
-    </div>
-
-  </div>
-
-  <div class="footer-bottom">
-    <p>&copy; 2026 ÉLVOIRE. All Rights Reserved.</p>
-  </div>
-</footer>
-
-  
-  <script src="/js/main.js?v=1786564882"></script>
-</body>
-</html>

@@ -1,0 +1,2224 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+body.menu-open {
+  overflow: hidden;
+}
+
+.site-header {
+  width: 100%;
+  background-color: #FFFFFF;
+  position: relative;
+  z-index: 1000;
+}
+
+/* ============================================================
+   DEFAULT STATE
+   ============================================================ */
+.fashion-header-block {
+  display: block;
+}
+
+.beauty-header-block {
+  display: none;
+  position: relative;
+}
+
+body.beauty-mode .fashion-header-block {
+  display: none;
+}
+
+body.beauty-mode .beauty-header-block {
+  display: block;
+}
+
+.fashion-promo-bar {
+  display: none;
+}
+
+/* ============================================================
+   FASHION HEADER STYLES (DESKTOP DEFAULT)
+   ============================================================ */
+.top-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 22px 40px;
+  background-color: #FFFFFF;
+  border-bottom: 1px solid #EDEDED;
+}
+
+.switch-wrapper {
+  flex: 1;
+  display: flex;
+  justify-content: flex-start;
+  padding-left: 15px;
+}
+
+.mode-switch {
+  background: none;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 13px;
+  letter-spacing: 0.5px;
+}
+
+.switch-label {
+  color: #B0B0B0;
+  transition: color 0.3s ease;
+}
+
+.switch-label.active {
+  color: #000000;
+  font-weight: 500;
+}
+
+.switch-divider {
+  color: #B0B0B0;
+}
+
+.logo-wrapper {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.site-logo {
+  font-family: "Playfair Display", serif;
+  font-size: 28px;
+  font-weight: 500;
+  letter-spacing: 3px;
+  color: #000000;
+  text-decoration: none;
+}
+
+.search-wrapper {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 18px;
+  padding-right: 15px;
+}
+
+.search-icon {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #000000;
+  display: flex;
+  align-items: center;
+}
+
+.fashion-nav-row {
+  background-color: #FFFFFF;
+  display: flex;
+  align-items: center;
+  padding: 14px 40px;
+  position: relative;
+  z-index: 999;
+  border-bottom: 1px solid #EDEDED;
+}
+
+.fashion-nav-row.is-fixed {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  box-shadow: 0 1px 6px rgba(0,0,0,0.06);
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  gap: 42px;
+  margin: 0 auto;
+  padding: 0;
+  flex: 1;
+}
+
+.nav-arrow {
+  display: none;
+}
+
+.fashion-nav li a {
+  font-family: "Louis Vuitton Web", "Louis Vuitton Web Fallback", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 13px;
+  font-weight: 300;
+  letter-spacing: 0.4px;
+  color: #1A1A1A;
+  text-decoration: none;
+  position: relative;
+  padding-bottom: 6px;
+  transition: color 0.25s ease;
+}
+
+.nav-links li a::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0%;
+  height: 1px;
+  background-color: #8C8C8C;
+  transition: width 0.3s ease;
+}
+
+.nav-links li a:hover {
+  color: #8C8C8C;
+}
+
+.nav-links li a:hover::after {
+  width: 100%;
+}
+
+.nav-logo-small {
+  font-family: "Playfair Display", serif;
+  font-size: 18px;
+  font-weight: 500;
+  letter-spacing: 1.5px;
+  color: #000000;
+  text-decoration: none;
+  opacity: 0;
+  width: 0;
+  overflow: hidden;
+  white-space: nowrap;
+  transition: all 0.3s ease;
+}
+
+.fashion-nav-row.is-fixed .nav-logo-small {
+  opacity: 1;
+  width: auto;
+  margin-right: 40px;
+}
+
+/* ============================================================
+   BEAUTY: BLACK PROMO BAR (DESKTOP DEFAULT)
+   ============================================================ */
+.beauty-promo-bar {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #14141A;
+  padding: 9px 40px;
+  width: 100%;
+}
+
+.beauty-switch {
+  position: absolute;
+  left: 40px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.beauty-switch .switch-label {
+  color: rgba(255,255,255,0.55);
+  font-family: "La Prairie", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 11px;
+  font-weight: 300;
+  letter-spacing: 1px;
+}
+
+.beauty-switch .switch-label.active {
+  color: #FFFFFF;
+  font-weight: 500;
+}
+
+.beauty-switch .switch-divider {
+  color: rgba(255,255,255,0.4);
+}
+
+.promo-text {
+  font-family: "La Prairie", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 11.5px;
+  font-weight: 300;
+  letter-spacing: 1.2px;
+  text-transform: uppercase;
+  color: #FFFFFF;
+  text-align: center;
+  margin: 0;
+}
+
+/* ============================================================
+   BEAUTY HEADER STYLES (DESKTOP DEFAULT)
+   ============================================================ */
+.beauty-main-row {
+  position: relative;
+}
+
+.beauty-inner {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 40px;
+  background-color: #FFFFFF;
+  border-bottom: 1px solid #EDEDED;
+}
+
+.beauty-inner .logo-wrapper {
+  flex: 0 0 auto;
+  padding-left: 15px;
+  display: block;
+}
+
+.beauty-logo {
+  font-size: 24px;
+  letter-spacing: 2px;
+  font-family: "Playfair Display", serif;
+  color: #000000;
+  text-decoration: none;
+}
+
+.beauty-nav-wrap {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  justify-content: center;
+}
+
+.beauty-nav {
+  list-style: none;
+  display: flex;
+  gap: 30px;
+  padding: 0;
+}
+
+.beauty-nav li a {
+  font-family: "La Prairie", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 11.5px;
+  font-weight: 300;
+  letter-spacing: 1.4px;
+  text-transform: uppercase;
+  color: #3E3E47 !important;
+  text-decoration: none !important;
+  position: relative;
+  padding-bottom: 6px;
+  transition: color 0.25s ease;
+}
+
+.beauty-nav li a:hover {
+  color: #9A9AA3 !important;
+}
+
+.right-wrapper {
+  flex: 0 0 auto;
+  display: flex;
+  align-items: center;
+  gap: 22px;
+  padding-right: 15px;
+}
+
+.beauty-inner .nav-toggle {
+  display: none;
+}
+
+.beauty-header-block.is-fixed {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  box-shadow: 0 1px 8px rgba(0,0,0,0.06);
+}
+
+/* ============================================================
+   SEARCH BOX (Shared)
+   ============================================================ */
+.search-box {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+  padding: 16px 40px;
+  background-color: #FAFAFA;
+  border-bottom: 1px solid #EDEDED;
+}
+
+.search-box.active {
+  display: flex;
+}
+
+.search-input {
+  width: 100%;
+  max-width: 400px;
+  padding: 8px 12px;
+  border: none;
+  border-bottom: 1px solid #CCCCCC;
+  outline: none;
+  font-size: 14px;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  background: transparent;
+}
+
+.search-close {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 20px;
+  color: #000000;
+  line-height: 1;
+}
+
+/* ============================================================
+   MOBILE HAMBURGER (hidden by default on desktop)
+   ============================================================ */
+.nav-toggle {
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 20px;
+  height: 15px;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.nav-toggle span {
+  display: block;
+  height: 1px;
+  width: 100%;
+  background-color: #000000;
+  transition: all 0.3s ease;
+}
+
+.nav-toggle.active span:nth-child(1) {
+  transform: translateY(7px) rotate(45deg);
+}
+.nav-toggle.active span:nth-child(2) {
+  opacity: 0;
+}
+.nav-toggle.active span:nth-child(3) {
+  transform: translateY(-7px) rotate(-45deg);
+}
+
+/* ============================================================
+   RESPONSIVE: TABLET
+   ============================================================ */
+@media (max-width: 1024px) {
+  .top-bar, .fashion-nav-row, .beauty-inner {
+    padding-left: 24px;
+    padding-right: 24px;
+  }
+  .nav-links, .beauty-nav {
+    gap: 18px;
+  }
+  .site-logo {
+    font-size: 22px;
+  }
+}
+
+/* ============================================================
+   RESPONSIVE: MOBILE
+   ============================================================ */
+@media (max-width: 768px) {
+
+  /* -------- FASHION MOBILE: SWITCH BAR (Top White Strip) -------- */
+  .fashion-promo-bar {
+    display: flex !important;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 8px 20px;
+    background-color: #FFFFFF;
+    border-bottom: 1px solid #EDEDED;
+  }
+
+  .fashion-promo-bar .mode-switch {
+    font-size: 11px;
+  }
+
+  /* -------- FASHION MOBILE: MAIN HEADER ROW -------- */
+  .top-bar {
+    display: flex !important;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+    padding: 14px 20px;
+    background-color: #FFFFFF;
+  }
+    .top-bar.is-fixed-mobile {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    box-shadow: 0 1px 6px rgba(0,0,0,0.06);
+  }
+
+  /* Switch ko top-bar se chhupa kar upper strip me bhejne ke liye */
+  .top-bar .switch-wrapper {
+    display: none !important;
+  }
+
+  /* Hamburger Menu (≡) ko Left align karne ke liye */
+  .top-bar .nav-toggle {
+    display: flex !important;
+    z-index: 2;
+  }
+
+  /* Logo ko bilkul Center me lane ke liye */
+  .top-bar .logo-wrapper {
+    position: absolute !important;
+    left: 50% !important;
+    top: 50% !important;
+    transform: translate(-50%, -50%) !important;
+    flex: none !important;
+    padding-left: 0 !important;
+  }
+
+  .site-logo {
+    font-size: 18px !important;
+    letter-spacing: 1.5px;
+  }
+
+  /* Search Icon ko Right align karne ke liye */
+  .top-bar .search-wrapper {
+    flex: 0 0 auto !important;
+    gap: 0 !important;
+    padding-right: 0 !important;
+  }
+
+  /* 3. BEAUTY MOBILE MENU FIX */
+  .beauty-header-block {
+    position: relative;
+    z-index: 10000;
+  }
+
+  .beauty-nav-wrap {
+    display: none;
+    position: fixed !important;
+    top: 47px !important; /* Beauty header ke bilkul neche se shuru hoga */
+    left: 0 !important;
+    width: 100vw !important;
+    height: calc(100vh - 47px) !important;
+    background-color: #FFFFFF !important;
+    transform: none !important;
+    padding: 16px 24px 40px 24px !important;
+    z-index: 10002 !important;
+    overflow-y: auto !important;
+  }
+
+  .beauty-nav-wrap.nav-open {
+    display: flex !important;
+  }
+
+  .top-bar .logo-wrapper {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    flex: none;
+  }
+
+  .site-logo {
+    font-size: 18px;
+    letter-spacing: 1.5px;
+  }
+
+  .top-bar .search-wrapper {
+    flex: 0 0 auto;
+    gap: 0;
+    padding-right: 0;
+  }
+
+  .nav-logo-small {
+    display: none !important;
+  }
+
+  /* -------- FASHION FULL SCREEN OVERLAY -------- */
+
+  .fashion-header-block {
+    position: relative;
+  }
+
+  .fashion-nav-row {
+    padding: 0;
+    border-bottom: none;
+    position: static;
+    box-shadow: none;
+  }
+
+    .fashion-nav {
+    display: none;
+    flex-direction: column;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: #FFFFFF;
+    padding: 6px 24px 24px 24px;
+    gap: 0;
+    z-index: 2000;
+    overflow-y: auto;
+  }
+
+  .fashion-nav.nav-open {
+    display: flex;
+  }
+
+  /* -------- BEAUTY MOBILE: PROMO BAR -------- */
+
+  .beauty-promo-bar {
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 8px 16px;
+    gap: 12px;
+  }
+
+  .beauty-switch {
+    position: static;
+    transform: none;
+    flex: 0 0 auto;
+  }
+
+  .promo-text {
+    display: none;
+  }
+
+  /* -------- BEAUTY MOBILE: MAIN ROW -------- */
+
+  .beauty-header-block {
+    position: relative;
+    box-shadow: none;
+  }
+
+  .beauty-inner {
+    padding: 14px 20px;
+    position: relative;
+    z-index: 2001;
+  }
+
+  .beauty-inner.is-fixed-mobile {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    box-shadow: 0 1px 6px rgba(0,0,0,0.06);
+  }
+
+  .beauty-inner .logo-wrapper {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    padding-left: 0;
+    flex: none;
+  }
+
+  .beauty-logo {
+    font-size: 15px;
+    letter-spacing: 1px;
+  }
+
+  .beauty-inner .nav-toggle {
+    display: flex;
+  }
+
+  .right-wrapper {
+    padding-right: 0;
+  }
+
+  /* -------- BEAUTY FULL SCREEN OVERLAY -------- */
+
+  .beauty-nav-wrap {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100vw;
+    height: calc(100vh - 100%);
+    background-color: #FFFFFF;
+    transform: none;
+    z-index: 2000;
+    overflow-y: auto;
+    padding: 6px 24px 24px 24px;
+  }
+
+  .beauty-nav-wrap.nav-open {
+    display: flex !important;
+  }
+
+  .beauty-nav {
+    flex-direction: column;
+    width: 100%;
+    gap: 0;
+    padding: 0;
+  }
+
+  /* -------- SHARED: LIST ITEM STYLE -------- */
+
+  .nav-links li {
+    width: 100%;
+    border-bottom: 1px solid #EDEDED;
+  }
+
+  .nav-links li a {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    padding: 18px 2px;
+    font-size: 13px;
+    letter-spacing: 1px;
+  }
+
+  .nav-links li a::after {
+    display: none;
+  }
+
+  .nav-arrow {
+    display: inline-block;
+    font-size: 18px;
+    color: #B0B0B0;
+    line-height: 1;
+  }
+}
+
+/* ===== HERO SECTION STYLES ===== */
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400&display=swap');
+
+/* Fallback clean font matching Cronos Pro Light rendering */
+@font-face {
+  font-family: 'Cronos Pro Light';
+  src: local('Cronos Pro Light'), local('CronosPro-Light'), local('Segoe UI Light'), local('Helvetica Neue');
+  font-weight: 300;
+  font-style: normal;
+}
+
+/* ============= GLOBAL FIXED SIZES ============= */
+.hero-heading {
+  font-family: "Cronos Pro Light", "Segoe UI Light", "Open Sans", sans-serif !important;
+  font-weight: 300 !important; /* STRICTLY LIGHT / NO BOLD */
+  font-size: 30px;
+  line-height: 1.3;
+  color: #081F2C;
+  text-transform: none;
+  letter-spacing: normal;
+  margin-bottom: 12px;
+}
+
+.hero-text {
+  font-family: "Open Sans", sans-serif;
+  font-weight: 300 !important; /* STRICTLY LIGHT / NO BOLD */
+  font-size: 16px;
+  line-height: 1.6;
+  color: #000000;
+  text-transform: none;
+}
+
+.eyebrow-label {
+  display: inline-block;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 12.5px;
+  font-weight: 300 !important;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  margin-bottom: 14px;
+}
+
+/* ============= HERO WRAPPER (DESKTOP FULL SCREEN FIT) ============= */
+.site-hero {
+  position: relative;
+  width: 100%;
+  /* Header height minus karke full screen fit (bina footer show hue) */
+  height: calc(100vh - 110px); 
+  min-height: 560px;
+  overflow: hidden;
+}
+
+.hero-mode {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+/* ============================================
+   FASHION HERO (UNTOUCHED)
+============================================ */
+.hero-mode-fashion {
+  background: #000;
+}
+
+.fh-video {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.fh-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(0,0,0,.25) 0%, rgba(0,0,0,.05) 40%, rgba(0,0,0,.55) 100%);
+}
+
+.fh-content {
+  position: absolute;
+  left: 50%;
+  bottom: 13%;
+  transform: translateX(-50%);
+  text-align: center;
+  width: 90%;
+  max-width: 620px;
+  z-index: 2;
+}
+
+.fh-content .eyebrow-label { color: #EADFCB; }
+.fh-content .fh-heading { color: #FFFFFF; margin-left: auto; margin-right: auto; }
+.fh-content .fh-text { color: #F1F1F1; margin-left: auto; margin-right: auto; }
+
+.fh-heading, .fh-text, .fh-content .eyebrow-label {
+  opacity: 0;
+  animation: fhFadeUp 1.2s ease forwards;
+}
+.fh-content .eyebrow-label { animation-delay: .3s; }
+.fh-content .fh-heading { animation-delay: .5s; }
+.fh-content .fh-text { animation-delay: .7s; }
+
+@keyframes fhFadeUp {
+  from { opacity: 0; transform: translateY(16px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* ============================================
+   BEAUTY HERO 
+============================================ */
+.hero-mode-beauty {
+  background: #fff;
+}
+
+.beauty-slide {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  z-index: 0;
+  transition: opacity 0.5s ease-in-out;
+}
+.beauty-slide.active {
+  opacity: 1;
+  z-index: 1;
+}
+
+.bslide-bg {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+}
+
+/* --- Skincare & Makeup Box Variant --- */
+.bslide-box {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(255, 255, 255, 0.94);
+  padding: 32px 36px;
+  width: fit-content;
+  max-width: 460px;
+  text-align: center;
+  box-shadow: 0 4px 20px rgba(0,0,0,.04);
+  border-radius: 2px;
+}
+
+.bslide-box .hero-cta {
+  margin-top: 18px;
+}
+
+.box-right {
+  right: 6%;
+}
+.box-left {
+  left: 6%;
+}
+
+/* --- Hair Slide (Plain / Left Aligned) --- */
+.bslide-plain {
+  position: absolute;
+  top: 50%;
+  left: 7%;
+  transform: translateY(-50%);
+  max-width: 440px;
+  padding: 0;
+  text-align: left;
+}
+
+.bslide-plain .hero-heading {
+  margin-bottom: 24px;
+}
+
+.bslide-plain .hero-text {
+  margin-left: 0;
+  margin-right: auto;
+  margin-bottom: 32px;
+}
+
+.bslide-plain .hero-cta {
+  margin-top: 0;
+}
+
+/* Beauty Button */
+.hero-cta {
+  display: inline-block;
+  padding: 10px 28px;
+  background-color: #081F2C;
+  color: #FFFFFF;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 12px;
+  font-weight: 300 !important;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  text-decoration: none;
+  border-radius: 2px;
+  transition: all 0.3s ease;
+  border: 1px solid #081F2C;
+}
+
+.hero-cta:hover {
+  background-color: #000000;
+  border-color: #000000;
+  color: #FFFFFF;
+}
+
+/* Zero Text Animation */
+.beauty-slide .hero-heading,
+.beauty-slide .hero-text,
+.beauty-slide .hero-cta,
+.beauty-slide .eyebrow-label {
+  opacity: 1 !important;
+  transform: none !important;
+  animation: none !important;
+}
+
+/* Progress indicator lines */
+.beauty-progress {
+  position: absolute;
+  bottom: 24px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 16px;
+  z-index: 3;
+}
+
+.bp-line {
+  width: 100px;
+  height: 1px;
+  background: rgba(8,31,44,.15);
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.bp-line span {
+  position: absolute;
+  left: 0; top: 0;
+  height: 100%;
+  width: 0%;
+  background: #081F2C;
+}
+
+.bp-line.active span.run {
+  animation: bpFill 6s linear forwards;
+}
+
+@keyframes bpFill {
+  from { width: 0%; }
+  to { width: 100%; }
+}
+
+/* ============================================
+   MOBILE RESPONSIVE (UNTOUCHED & OKAY)
+============================================ */
+@media(max-width: 768px) {
+  .site-hero * {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  .site-hero { 
+    height: auto;
+    aspect-ratio: 16 / 9;
+    min-height: 220px;
+  }
+
+  .eyebrow-label {
+    font-weight: 200 !important;
+    font-size: 8px;
+    letter-spacing: 1.2px;
+    margin-bottom: 3px;
+  }
+
+  .hero-heading { 
+    font-weight: 200 !important;
+    font-size: 13.5px !important; 
+    margin-bottom: 5px !important;
+    line-height: 1.2;
+  }
+
+  .hero-text { 
+    font-weight: 200 !important;
+    font-size: 9.5px !important; 
+    line-height: 1.35;
+    opacity: 0.9;
+  }
+
+  .hero-cta {
+    font-weight: 200 !important;
+    padding: 4px 10px;
+    font-size: 8px;
+    letter-spacing: 0.8px;
+  }
+
+  .bslide-box {
+    top: 50%;
+    transform: translateY(-50%);
+    width: 50%;
+    max-width: 50%;
+    padding: 8px 10px;
+    background: rgba(255, 255, 255, 0.94);
+  }
+
+  .box-right {
+    right: 4%;
+    left: auto;
+  }
+
+  .box-left {
+    left: 4%;
+    right: auto;
+  }
+
+  .bslide-box .hero-cta {
+    margin-top: 5px;
+  }
+
+  .bslide-plain {
+    top: 50%;
+    left: 4%;
+    transform: translateY(-50%);
+    text-align: left;
+    max-width: 52%;
+  }
+
+  .bslide-plain .hero-text {
+    margin-left: 0;
+    margin-right: auto;
+    margin-bottom: 6px;
+  }
+
+  .bslide-plain .hero-heading {
+    margin-bottom: 4px;
+  }
+
+  .beauty-progress {
+    bottom: 5px;
+    gap: 6px;
+  }
+
+  .bp-line { 
+    width: 24px; 
+  }
+
+  .fh-content { 
+    bottom: 10%; 
+  }
+}
+/* ============================================
+   FASHION GALLERY SECTION (UPDATED PROPORTIONS & SPACING)
+============================================ */
+.fashion-gallery-section {
+  width: 100%;
+  /* Side space ko thoda badha kar 6% kar diya hai */
+  padding: 70px 6% 90px;
+  background-color: transparent;
+}
+
+.fg-container {
+  max-width: 1440px;
+  margin: 0 auto;
+}
+
+/* --- Section Title --- */
+.fg-title {
+  font-family: "Louis Vuitton Web", "Louis Vuitton Web Fallback", "Helvetica Neue", Helvetica, Arial, sans-serif !important;
+  font-size: 32px;
+  font-weight: 300 !important; /* STRICTLY LIGHT / NO BOLD */
+  color: #1A1A1A;
+  text-align: center;
+  margin-bottom: 50px;
+  letter-spacing: normal;
+  text-transform: none;
+}
+
+/* --- 4 Columns Grid (2 Rows) --- */
+.fg-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  /* Items ke darmiyan space kam kar ke 12px kar di hai */
+  gap: 12px;
+  row-gap: 40px;
+}
+
+/* --- Gallery Card --- */
+.fg-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-decoration: none;
+}
+
+.fg-image-wrapper {
+  width: 100%;
+  /* Vertical portrait aspect ratio (bilkul square nahi) */
+  aspect-ratio: 4 / 5;
+  overflow: hidden;
+  background-color: #f6f6f6;
+  margin-bottom: 16px;
+}
+
+.fg-image-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+/* Soft scale animation on image hover */
+.fg-card:hover .fg-image-wrapper img {
+  transform: scale(1.03);
+}
+
+/* --- Card Text Label --- */
+.fg-label {
+  position: relative;
+  font-family: "Louis Vuitton Web", "Louis Vuitton Web Fallback", "Helvetica Neue", Helvetica, Arial, sans-serif !important;
+  font-size: 16px;
+  font-weight: 300 !important; /* STRICTLY LIGHT / NO BOLD */
+  color: #727272;
+  text-align: center;
+  transition: color 0.3s ease;
+  padding-bottom: 3px;
+}
+
+/* Hover effect: Greyish shade & smooth underline animation */
+.fg-card:hover .fg-label {
+  color: #1A1A1A;
+}
+
+.fg-label::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0%;
+  height: 1px;
+  background-color: #1A1A1A;
+  transition: width 0.35s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.fg-card:hover .fg-label::after {
+  width: 100%;
+}
+
+/* ============================================
+   RESPONSIVE DESIGN (TABLET & MOBILE)
+============================================ */
+@media (max-width: 1024px) {
+  .fashion-gallery-section {
+    padding: 55px 4% 70px;
+  }
+
+  .fg-grid {
+    gap: 10px;
+    row-gap: 32px;
+  }
+  
+  .fg-title {
+    font-size: 26px;
+    margin-bottom: 36px;
+  }
+}
+
+@media (max-width: 768px) {
+  .fashion-gallery-section {
+    padding: 40px 4% 50px;
+  }
+
+  /* Mobile: Exactly 2 columns, vertical shape retained */
+  .fg-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 8px;
+    row-gap: 24px;
+  }
+
+  .fg-title {
+    font-size: 22px;
+    margin-bottom: 26px;
+  }
+
+  .fg-label {
+    font-size: 13.5px;
+  }
+}
+/* ============================================
+   BEAUTY GALLERY SECTION (DESKTOP)
+============================================ */
+.beauty-gallery-section {
+  width: 100%;
+  padding: 60px 0 90px 0;
+  background-color: transparent;
+}
+
+.bg-container {
+  width: 100%;
+  max-width: 100%;
+  margin: 0 auto;
+}
+
+/* --- Main Title --- */
+.bg-main-title {
+  font-family: cronos-pro, sans-serif !important;
+  font-size: 32px;
+  font-weight: 300 !important; /* STRICTLY NON-BOLD */
+  color: #000000;
+  text-align: center;
+  margin-bottom: 50px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+/* --- Base Card Styling --- */
+.bg-card {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  text-align: left;
+  text-decoration: none;
+  width: 100%;
+}
+
+.bg-image-wrapper {
+  width: 100%;
+  overflow: hidden;
+  background-color: #f7f7f7;
+}
+
+.bg-image-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.bg-card:hover .bg-image-wrapper img {
+  transform: scale(1.02);
+}
+
+/* ============================================
+   TOP ROW: 2 GALLERIES (LEFT ALIGNED WITH EXACT LINE ANIMATION)
+============================================ */
+.bg-grid-top {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 40px;
+  padding: 0 40px;
+  margin-bottom: 50px;
+}
+
+.bg-card-large .bg-image-wrapper {
+  aspect-ratio: 16 / 8.5;
+  margin-bottom: 16px;
+}
+
+.bg-label-large {
+  display: inline-table !important;
+  margin-left: 4% !important;
+  position: relative;
+  font-family: cronos-pro, sans-serif !important;
+  font-size: 25px;
+  font-weight: 150 !important;
+  color: #000000;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  padding-bottom: 4px;
+}
+
+.bg-label-large::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0%;
+  height: 1px;
+  background-color: #000000;
+  transition: width 0.35s ease;
+}
+
+.bg-card-large:hover .bg-label-large::after {
+  width: 100%;
+}
+
+/* ============================================
+   BEAUTY GALLERY — MOBILE RESPONSIVE (TOP ROW ONLY)
+============================================ */
+
+:root {
+  --beauty-sticky-offset: 58px;
+}
+
+@media (max-width: 768px) {
+
+  .bg-main-title {
+    font-size: 19px;
+    letter-spacing: 1.5px;
+    margin-bottom: 28px;
+  }
+
+  .bg-grid-top {
+    display: block;
+    padding: 0 20px;
+    margin-bottom: 0;
+  }
+
+  .bg-card-large {
+    position: sticky;
+    top: var(--beauty-sticky-offset);
+    width: 100%;
+    background-color: #ffffff;
+    padding-bottom: 20px;
+  }
+
+  .bg-card-large:nth-child(1) { z-index: 1; }
+  .bg-card-large:nth-child(2) { z-index: 2; }
+
+  .bg-card-large .bg-image-wrapper {
+    margin-bottom: 14px;
+  }
+
+  .bg-label-large {
+    margin-left: 12px !important;
+    font-size: 16px;
+  }
+}
+
+/* ============================================
+   ELV CAROUSEL — Versace Mobile Slider (Isolated Component)
+============================================ */
+
+/* ---------- DESKTOP: Normal 4-column grid ---------- */
+.elv-carousel-wrap {
+  position: relative;
+  padding: 0 68px;
+}
+
+.elv-nav {
+  display: none;
+}
+
+.elv-carousel-viewport {
+  overflow: visible;
+  width: 100%;
+}
+
+.elv-carousel-track {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+}
+
+.elv-slide {
+  display: flex;
+  flex-direction: column;
+  text-decoration: none;
+}
+
+.elv-slide-img {
+  width: 100%;
+  aspect-ratio: 1 / 1.4;
+  overflow: hidden;
+  background-color: #f7f7f7;
+  margin-bottom: 14px;
+}
+
+.elv-slide-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.elv-slide:hover .elv-slide-img img {
+  transform: scale(1.02);
+}
+
+.elv-slide-label {
+  display: table;
+  margin: 0 auto;
+  font-family: "Louis Vuitton Web", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 12px;
+  font-weight: 300;
+  color: #000000;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  text-align: center;
+}
+/* --- ELV Small Gallery Label: Hover Underline + Color Flip --- */
+.elv-slide-label {
+  position: relative;
+  padding-bottom: 4px;
+  transition: color 0.3s ease;
+}
+
+.elv-slide-label::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0%;
+  height: 1px;
+  background-color: #8C8C8C;
+  transition: width 0.35s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.elv-slide:hover .elv-slide-label {
+  color: #8C8C8C;
+}
+
+.elv-slide:hover .elv-slide-label::after {
+  width: 100%;
+}
+
+/* ---------- MOBILE: Versace Style Infinite Carousel (2 visible, 1-step slide) ---------- */
+@media (max-width: 768px) {
+
+  .elv-carousel-wrap {
+    padding: 0 24px; /* Zyada luxury side space (pehle 16px tha) */
+    position: relative;
+  }
+
+  .elv-carousel-viewport {
+    overflow: hidden;
+    width: 100%;
+  }
+
+  .elv-carousel-track {
+    display: flex;
+    gap: 8px; /* Two cards ke beech clean gap (cards chhote dikhenge) */
+    will-change: transform;
+  }
+
+  .elv-slide {
+    flex: 0 0 calc(50% - 4px); /* Perfect 2-card distribution */
+    min-width: 0;
+  }
+
+  .elv-slide-img {
+    width: 100%;
+    aspect-ratio: 1 / 1.35; /* Exact Versace compact vertical ratio */
+    margin-bottom: 10px;
+    background-color: #f8f8f8;
+    overflow: hidden;
+  }
+
+  .elv-slide-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+
+  .elv-slide-label {
+    display: block;
+    text-align: left;
+    margin: 0;
+    font-size: 11px;
+    font-weight: 300; /* Light non-bold typography */
+    color: #111111;
+    letter-spacing: 0.8px;
+    line-height: 1.3;
+    text-transform: uppercase;
+  }
+
+  /* VERSACE MINIMALIST ARROWS (Compact Sleek Box) */
+  .elv-nav {
+    display: flex;
+    position: absolute;
+    top: 38%;
+    transform: translateY(-50%);
+    width: 20px;            /* Pehle 30px tha, ab chota aur sleek kar diya hai */
+    height: 32px;           /* Pehle 48px tha */
+    background: rgba(255, 255, 255, 0.95);
+    border: none;
+    align-items: center;
+    justify-content: center;
+    font-size: 13px;        /* Arrow ikon ka size bhi proportional kar diya hai */
+    color: #000000;
+    z-index: 10;
+    cursor: pointer;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+    transition: opacity 0.2s ease;
+  }
+
+  .elv-nav-prev { left: 24px; }
+  .elv-nav-next { right: 24px; }
+}
+/* ============================================
+   GALLERY MODE TOGGLE FIX (Fashion / Beauty)
+============================================ */
+.beauty-mode-content {
+  display: none;
+}
+
+body.beauty-mode .fashion-mode-content {
+  display: none;
+}
+
+body.beauty-mode .beauty-mode-content {
+  display: block;
+}
+/* ============================================
+   PROMO BANNER SECTION (Fashion Image / Beauty Video)
+============================================ */
+@import url('https://fonts.googleapis.com/css2?family=Baskervville:ital@0;1&display=swap');
+
+.promo-banner-section {
+  position: relative;
+  width: 100%;
+  height: 80vh;
+  min-height: 560px;
+  max-height: 760px;
+  overflow: hidden;
+  background-color: #000;
+  margin-top: -20px;
+}
+
+.promo-banner-media-wrap {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.promo-banner-media {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.promo-banner-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(0deg, rgba(0,0,0,.45) 0%, rgba(0,0,0,.05) 45%, rgba(0,0,0,0) 70%);
+}
+
+.promo-banner-text {
+  position: absolute;
+  left: 6%;
+  bottom: 9%;
+  z-index: 2;
+  max-width: 560px;
+}
+
+.promo-line-small {
+  font-family: "Baskervville", "Times New Roman", Times, serif;
+  font-style: italic;
+  font-weight: 400;
+  font-size: 16px;
+  letter-spacing: 1.5px;
+  color: #FFFFFF;
+  margin-bottom: 10px;
+  opacity: 0;
+  animation: promoFadeUp 1s ease forwards;
+  animation-delay: .2s;
+}
+
+.promo-line-large {
+  font-family: "Baskervville", "Times New Roman", Times, serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 46px;
+  line-height: 1.25;
+  color: #FFFFFF;
+  letter-spacing: 0.3px;
+  opacity: 0;
+  animation: promoFadeUp 1s ease forwards;
+  animation-delay: .4s;
+}
+
+@keyframes promoFadeUp {
+  from { opacity: 0; transform: translateY(14px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* ============================================
+   PROMO BANNER — MOBILE RESPONSIVE
+============================================ */
+@media (max-width: 768px) {
+  .promo-banner-section {
+    height: auto;
+    aspect-ratio: 16 / 7;
+    min-height: 260px;
+    max-height: none;
+    margin-top: -25px;
+  }
+
+
+  .promo-banner-text {
+    left: 6%;
+    right: 6%;
+    bottom: 8%;
+    max-width: 100%;
+  }
+
+  .promo-line-small {
+    font-size: 12px;
+    margin-bottom: 6px;
+  }
+
+  .promo-line-large {
+    font-size: 24px;
+    line-height: 1.3;
+  }
+}
+/* ============================================
+   BEAUTY GALLERY — Desktop: Remove trailing margin
+   (Ab bg-grid-top order mein last element hai)
+============================================ */
+@media (min-width: 1025px) {
+  .beauty-gallery-section .bg-grid-top:last-child {
+    margin-bottom: 0;
+  }
+}
+/* ============================================
+   SHOP THE LOOK CAROUSEL (Desktop — 4 Visible, 1-Step Infinite)
+============================================ */
+.stl-section {
+  width: 100%;
+  padding: 70px 24px 40px;
+  background-color: transparent;
+}
+
+.stl-title {
+  font-family: "Louis Vuitton Web", "Louis Vuitton Web Fallback", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 32px;
+  font-weight: 300;
+  color: #1A1A1A;
+  text-align: center;
+  margin-bottom: 50px;
+  letter-spacing: normal;
+}
+
+.stl-carousel-wrap {
+  position: relative;
+  padding: 0;
+}
+
+.stl-carousel-viewport {
+  overflow: hidden;
+  width: 100%;
+}
+
+.stl-carousel-track {
+  display: flex;
+  gap: 1px;
+  background-color: #EDEDED;
+}
+
+.stl-slide {
+  flex: 0 0 25%;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-decoration: none;
+  background-color: #FFFFFF;
+}
+
+.stl-slide-img {
+  width: 100%;
+  aspect-ratio: 3 / 4;
+  overflow: hidden;
+  background-color: #f2f2f2;
+}
+
+.stl-slide-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.stl-slide:hover .stl-slide-img img {
+  transform: scale(1.03);
+}
+
+.stl-slide-label {
+  display: block;
+  text-align: center;
+  margin-top: 16px;
+  padding-bottom: 4px;
+  font-family: "Louis Vuitton Web", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 14px;
+  font-weight: 300;
+  color: #1A1A1A;
+  letter-spacing: 0.3px;
+}
+.stl-slide-label {
+  position: relative;
+  padding-bottom: 4px;
+}
+
+.stl-slide-label::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0%;
+  height: 1px;
+  background-color: #8C8C8C;
+  transition: width 0.35s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.stl-slide:hover .stl-slide-label {
+  color: #8C8C8C;
+}
+
+.stl-slide:hover .stl-slide-label::after {
+  width: 100%;
+}
+
+.stl-nav {
+  display: flex;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 36px;
+  height: 36px;
+  background: rgba(255,255,255,0.95);
+  border: none;
+  border-radius: 0;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  color: #000000;
+  z-index: 10;
+  cursor: pointer;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.08);
+  transition: background 0.2s ease;
+}
+
+.stl-nav:hover {
+  background: #F5F5F5;
+}
+
+.stl-nav-prev { left: 0px; }
+.stl-nav-next { right: 0px; }
+/* ============================================
+   THE COMPLETE EDIT / THE RITUAL EDIT — MOBILE (3 Cards Visible)
+============================================ */
+@media (max-width: 768px) {
+
+  .stl-section {
+    padding: 40px 20 50px;
+  }
+
+  .stl-title {
+    font-size: 20px;
+    margin-bottom: 26px;
+  }
+
+  .stl-carousel-wrap {
+    padding: 0;
+  }
+
+  .stl-slide {
+    flex: 0 0 calc(50% - 4px);
+  }
+
+  .stl-carousel-track {
+    gap: 8px;
+  }
+
+  .stl-slide-label {
+    font-size: 11px;
+    margin-top: 10px;
+  }
+
+  .stl-nav {
+    width: 22px;
+    height: 34px;
+    font-size: 12px;
+  }
+
+  .stl-nav-prev { left: 0px; }
+  .stl-nav-next { right: 0px; }
+
+}
+/* ============================================
+   EDITOR'S PICK SECTION
+============================================ */
+.ep-section {
+  width: 100%;
+  padding: 20px 5% 90px;
+}
+
+.ep-container {
+  max-width: 1440px;
+  margin: 0 auto;
+}
+
+.ep-title {
+  font-family: "Louis Vuitton Web", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 32px;
+  font-weight: 300;
+  color: #1A1A1A;
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.ep-grid {
+  display: grid;
+  gap: 15px;
+}
+
+.ep-grid-3 {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.ep-grid-4 {
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.ep-card {
+  display: block;
+  text-decoration: none;
+}
+
+.ep-image-wrapper {
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  overflow: hidden;
+  background-color: #f6f6f6;
+  margin-bottom: 18px;
+}
+
+.ep-image-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.ep-card:hover .ep-image-wrapper img {
+  transform: scale(1.03);
+}
+
+.ep-text {
+  text-align: left;
+}
+
+.ep-name {
+  display: block;
+  font-family: "Louis Vuitton Web", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 17px;
+  font-weight: 300;
+  color: #1A1A1A;
+  letter-spacing: 0.3px;
+}
+
+.ep-desc {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 13px;
+  font-weight: 300;
+  color: #6E6E6E;
+  line-height: 1.5;
+  max-height: 0;
+  opacity: 0;
+  overflow: hidden;
+  margin: 0;
+  transition: all 0.35s ease;
+}
+
+.ep-card:hover .ep-desc {
+  max-height: 60px;
+  opacity: 1;
+  margin: 8px 0;
+}
+
+.ep-link {
+  display: inline-block;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 12px;
+  font-weight: 400;
+  letter-spacing: 0.5px;
+  color: #1A1A1A;
+  text-decoration: underline;
+  margin-top: 6px;
+}
+
+/* ============================================
+   EDITOR'S PICK — MOBILE
+============================================ */
+@media (max-width: 768px) {
+  .ep-section {
+    padding: 40px 4% 50px;
+  }
+
+  .ep-title {
+    font-size: 22px;
+    margin-bottom: 26px;
+  }
+
+  .ep-grid-3,
+  .ep-grid-4 {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 14px;
+  }
+
+  .ep-name {
+    font-size: 13.5px;
+  }
+
+  .ep-desc {
+    font-size: 11.5px;
+  }
+}
+/* ============================================
+   EDITOR'S PICK — FASHION (Static, No Animation)
+============================================ */
+.epv-section {
+  width: 100%;
+  padding: 20px 0 90px;
+  background-color: #FFFFFF;
+}
+
+.epv-title {
+  font-family: "Louis Vuitton Web", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 32px;
+  font-weight: 300;
+  color: #1A1A1A;
+  text-align: center;
+  margin-bottom: 50px;
+  padding: 0 6%;
+}
+
+.epv-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  padding: 0 4%;
+}
+
+.epv-card {
+  display: block;
+  text-decoration: none;
+}
+
+.epv-image-wrapper {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  overflow: hidden;
+  background-color: #000;
+}
+
+.epv-image-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.epv-text {
+  text-align: left;
+  padding: 14px 2px 0;
+}
+
+.epv-name {
+  display: block;
+  font-family: "Optima", "Optima Display Roman", "Didot", "Times New Roman", serif;
+  font-weight: 400;
+  font-size: 20px;
+  color: #000000;
+  letter-spacing: 0.3px;
+}
+
+.epv-desc {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 12.5px;
+  font-weight: 300;
+  color: #555555;
+  line-height: 1.5;
+  margin: 8px 0;
+}
+
+.epv-link {
+  display: inline-block;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 11px;
+  font-weight: 400;
+  letter-spacing: 0.8px;
+  text-transform: uppercase;
+  color: #000000;
+  text-decoration: underline;
+}
+/* ============================================
+   EDITOR'S PICK — FASHION MOBILE (1 Per Row, Static)
+============================================ */
+@media (max-width: 768px) {
+  .epv-title {
+    font-size: 22px;
+    margin-bottom: 24px;
+  }
+
+  .epv-grid {
+  display: flex !important;
+  grid-template-columns: none !important;
+  overflow-x: auto !important;
+  scroll-snap-type: x mandatory !important;
+  -webkit-overflow-scrolling: touch !important;
+  gap: 14px !important;
+  padding: 0 20px !important;
+  scrollbar-width: none !important;
+}
+}
+
+  .epv-grid::-webkit-scrollbar {
+    display: none;
+  }
+
+  .epv-card {
+  flex: 0 0 82% !important;
+  scroll-snap-align: start !important;
+}
+
+  .epv-name {
+    font-size: 19px;
+  }
+
+  .epv-desc {
+    font-size: 14px;
+    line-height: 1.6;
+  }
+
+  .epv-link {
+    font-size: 12.5px;
+  }
+
+  .epv-dots {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    margin-top: 20px;
+  }
+
+  .epv-dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background-color: #D5D5D5;
+  }
+/* ============================================
+   NEWSLETTER SECTION
+============================================ */
+.nl-section {
+  width: 100%;
+  padding: 80px 6%;
+  background-color: #F7F6F4;
+  text-align: center;
+}
+
+.nl-container {
+  max-width: 560px;
+  margin: 0 auto;
+}
+
+.nl-title {
+  font-family: "Louis Vuitton Web", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 28px;
+  font-weight: 300;
+  color: #1A1A1A;
+  margin-bottom: 12px;
+}
+
+.nl-subtext {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 14px;
+  font-weight: 300;
+  color: #6E6E6E;
+  line-height: 1.6;
+  margin-bottom: 34px;
+}
+
+.nl-form {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-bottom: 1px solid #1A1A1A;
+  max-width: 420px;
+  margin: 0 auto;
+  padding-bottom: 8px;
+}
+
+.nl-input {
+  flex: 1;
+  border: none;
+  background: transparent;
+  outline: none;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 14px;
+  font-weight: 300;
+  color: #1A1A1A;
+  padding: 8px 4px;
+}
+
+.nl-input::placeholder {
+  color: #A0A0A0;
+}
+
+.nl-button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 12px;
+  font-weight: 400;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: #1A1A1A;
+  text-decoration: underline;
+  white-space: nowrap;
+  padding: 8px 4px;
+}
+
+@media (max-width: 768px) {
+  .nl-section {
+    padding: 50px 6%;
+  }
+  .nl-title {
+    font-size: 21px;
+  }
+  .nl-subtext {
+    font-size: 12.5px;
+  }
+  .nl-form {
+    max-width: 100%;
+  }
+  .nl-input, .nl-button {
+    font-size: 12.5px;
+  }
+}
+/* ============================================
+   FOOTER
+============================================ */
+.site-footer {
+  width: 100%;
+  background-color: #14141A;
+  color: #FFFFFF;
+  padding: 70px 6% 0;
+}
+
+.footer-container {
+  max-width: 1440px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1.6fr 1fr 1fr 1fr;
+  gap: 40px;
+  padding-bottom: 50px;
+  border-bottom: 1px solid rgba(255,255,255,0.12);
+}
+
+.footer-logo {
+  font-family: "Playfair Display", serif;
+  font-size: 24px;
+  letter-spacing: 2px;
+  color: #FFFFFF;
+  text-decoration: none;
+}
+
+.footer-tagline {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 13px;
+  font-weight: 300;
+  color: rgba(255,255,255,0.6);
+  margin-top: 14px;
+  line-height: 1.6;
+  max-width: 260px;
+}
+
+.footer-heading {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 12.5px;
+  font-weight: 500;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: #FFFFFF;
+  margin-bottom: 18px;
+}
+
+.footer-links {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-links li {
+  margin-bottom: 12px;
+}
+
+.footer-links a {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 13px;
+  font-weight: 300;
+  color: rgba(255,255,255,0.7);
+  text-decoration: none;
+  transition: color 0.25s ease;
+}
+
+.footer-links a:hover {
+  color: #FFFFFF;
+}
+
+.footer-bottom {
+  text-align: center;
+  padding: 22px 0;
+}
+
+.footer-bottom p {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 11.5px;
+  font-weight: 300;
+  color: rgba(255,255,255,0.45);
+  letter-spacing: 0.5px;
+}
+
+@media (max-width: 768px) {
+  .site-footer {
+    padding: 50px 6% 0;
+  }
+  .footer-container {
+    grid-template-columns: 1fr 1fr;
+    gap: 32px;
+  }
+  .footer-brand {
+    grid-column: span 2;
+  }
+}
