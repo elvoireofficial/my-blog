@@ -1,62 +1,96 @@
-<header class="site-header" id="siteHeader">
+<!-- ========== FASHION HEADER BLOCK ========== -->
+<div class="fashion-header-block" id="fashionHeaderBlock">
 
-  <!-- ========== FASHION HEADER BLOCK ========== -->
-  <div class="fashion-header-block" id="fashionHeaderBlock">
+  <!-- NORMAL STATE -->
+  <div class="fashion-normal-bar">
+    <div class="nav-left">
+      <button class="menu-trigger" id="navToggleFashion" aria-label="Menu">Menu</button>
+      <div class="mode-switch-container">
+  <button class="mode-switch" id="modeSwitchToggle">
+    <span class="switch-pill"></span>
+    <span class="switch-label active" data-value="fashion">Fashion</span>
+    <span class="switch-label" data-value="beauty">Beauty</span>
+  </button>
+</div>
+    </div>
 
-    <!-- Mobile-only white switch bar -->
-    <div class="fashion-promo-bar">
+    <div class="logo-wrapper">
+      <a href="/" class="site-logo">ÉLVOIRE</a>
+    </div>
+
+    <div class="nav-right">
+      <button class="text-search-btn" id="searchToggleFashionText">Search</button>
+      <a href="/about" class="nav-link-item">Journal</a>
+
+      <!-- ICON 1: SAVED / BOOKMARK -->
+      <button class="icon-btn" id="savedToggleFashion" aria-label="Saved">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="1.3">
+          <path d="M6 3h12a1 1 0 0 1 1 1v17l-7-4-7 4V4a1 1 0 0 1 1-1z"/>
+        </svg>
+      </button>
+
+      <!-- ICON 2: NEWSLETTER / MAIL (Blog relevant) -->
+      <button class="icon-btn" id="newsletterToggleFashion" aria-label="Subscribe">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="1.3">
+          <rect x="2" y="4" width="20" height="16" rx="1"/>
+          <path d="m22 7-10 7L2 7"/>
+        </svg>
+      </button>
+
+    </div>
+  </div>
+</div>
+  <!-- STICKY STATE -->
+<div class="fashion-sticky-bar" id="fashionStickyBar">
+  <div class="sticky-left-wrap">
+    <div class="mode-switch-container">
       <button class="mode-switch">
         <span class="switch-label active" data-value="fashion">Fashion</span>
         <span class="switch-divider">/</span>
         <span class="switch-label" data-value="beauty">Beauty</span>
       </button>
     </div>
-
-    <div class="top-bar">
-
-      <button class="nav-toggle" id="navToggleFashion" aria-label="Menu">
-        <span></span><span></span><span></span>
-      </button>
-
-      <div class="switch-wrapper">
-        <button class="mode-switch">
-          <span class="switch-label active" data-value="fashion">Fashion</span>
-          <span class="switch-divider">/</span>
-          <span class="switch-label" data-value="beauty">Beauty</span>
-        </button>
-      </div>
-
-      <div class="logo-wrapper">
-        <a href="/" class="site-logo">ÉLVOIRE</a>
-      </div>
-
-      <div class="search-wrapper">
-        <button class="search-icon" id="searchToggleFashion" aria-label="Search">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.5">
-            <circle cx="11" cy="11" r="7"></circle>
-            <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
-          </svg>
-        </button>
-      </div>
-    </div>
-
-    <nav class="fashion-nav-row" id="fashionNavRow">
-      <a href="/" class="nav-logo-small">ÉLVOIRE</a>
-      <ul class="nav-links fashion-nav" id="fashionNav">
-        <li><a href="#">Monogram 130 <span class="nav-arrow">›</span></a></li>
-        <li><a href="#">The Collections <span class="nav-arrow">›</span></a></li>
-        <li><a href="#">Speedy <span class="nav-arrow">›</span></a></li>
-        <li><a href="#">Alma <span class="nav-arrow">›</span></a></li>
-        <li><a href="#">Neverfull <span class="nav-arrow">›</span></a></li>
-        <li><a href="#">Noé <span class="nav-arrow">›</span></a></li>
-        <li><a href="#">Keepall <span class="nav-arrow">›</span></a></li>
-        <li><a href="#">Small Leather Goods <span class="nav-arrow">›</span></a></li>
-      </ul>
-    </nav>
-
   </div>
 
-  <!-- ========== BEAUTY HEADER BLOCK ========== -->
+  <nav class="sticky-nav-inline">
+    <ul class="nav-links fashion-nav" id="fashionNav">
+      <li><a href="/fashion/outfit/">Outfit</a></li>
+      <li><a href="/fashion/shoes/">Shoes</a></li>
+      <li><a href="/fashion/jewelry/">Jewelry</a></li>
+      <li><a href="/fashion/accessories/">Accessories</a></li>
+      <li><a href="/fashion/bags/">Bags</a></li>
+      <li><a href="/fashion/dresses/">Dresses</a></li>
+      <li><a href="/fashion/loungewear/">Loungewear</a></li>
+      <li><a href="/fashion/new-arrivals/">New Arrivals</a></li>
+    </ul>
+  </nav>
+
+  <div class="sticky-right-wrap">
+    <!-- 1. Search Icon (Pehtey) -->
+    <button class="search-icon" id="searchToggleFashion" aria-label="Search">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.2">
+        <circle cx="11" cy="11" r="7"></circle>
+        <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+      </svg>
+    </button>
+
+    <!-- 2. Newsletter Icon -->
+    <button class="icon-btn sticky-icon" id="newsletterToggleFashionSticky" aria-label="Newsletter">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.2">
+        <rect x="2" y="4" width="20" height="16" rx="2"></rect>
+        <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path>
+      </svg>
+    </button>
+
+    <!-- 3. Saved Icon -->
+    <button class="icon-btn sticky-icon" id="savedToggleFashionSticky" aria-label="Saved">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="1.3">
+        <path d="M6 3h12a1 1 0 0 1 1 1v17l-7-4-7 4V4a1 1 0 0 1 1-1z"/>
+      </svg>
+    </button>
+  </div>
+</div>
+  <!-- ========== BEAUTY HEADER BLOCK (BILKUL UNCHANGED) ========== -->
   <div class="beauty-header-block" id="beautyHeaderBlock">
 
     <div class="beauty-promo-bar">
@@ -106,7 +140,7 @@
 
   </div>
 
-  <!-- ========== SEARCH BOX (Shared with Hugo Form) ========== -->
+  <!-- ========== SEARCH BOX (BILKUL UNCHANGED) ========== -->
   <div class="search-box" id="searchBox">
     <form class="search-form" id="searchForm" action="/search" method="GET">
       <input type="text" name="q" class="search-input" id="searchInput" placeholder="Search..." autocomplete="off">

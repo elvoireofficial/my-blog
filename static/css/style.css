@@ -1,3 +1,18 @@
+/* ============================================================
+   GLOBAL LUXURY TYPOGRAPHY RENDERING (APPLIES TO WHOLE SITE)
+   ============================================================ */
+*, *::before, *::after {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body, button, input, a, span, p, h1, h2, h3, h4, h5, h6 {
+  font-optical-sizing: auto;
+  font-style: normal;
+  text-rendering: geometricPrecision;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
 * {
   margin: 0;
   padding: 0;
@@ -44,23 +59,305 @@ body.beauty-mode .beauty-header-block {
 }
 
 /* ============================================================
-   FASHION HEADER STYLES (DESKTOP DEFAULT)
+   FASHION HEADER — NORMAL STATE
    ============================================================ */
-.top-bar {
+
+.fashion-normal-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1001;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 22px 40px;
-  background-color: #FFFFFF;
-  border-bottom: 1px solid #EDEDED;
+  padding: 26px 40px;
+  background-color: transparent;
+  font-family: "Toteme Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  font-size: 11px;
+  font-weight: 200;
+  color: rgba(255, 255, 255, 0.88);
+  opacity: 1;
+  transition: opacity 0.3s ease;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
 }
 
-.switch-wrapper {
+.fashion-normal-bar.is-hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.fashion-normal-bar .nav-left {
   flex: 1;
   display: flex;
-  justify-content: flex-start;
-  padding-left: 15px;
+  align-items: center;
+  gap: 32px;
 }
+
+.fashion-normal-bar .menu-trigger {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-family: inherit;
+  font-size: 11px;
+  font-weight: 200;
+  letter-spacing: 1.5px;
+  color: rgba(255, 255, 255, 0.88);
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.25);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.fashion-normal-bar .logo-wrapper {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.fashion-normal-bar .site-logo {
+  font-family: "Toteme Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  font-size: 26px;
+  font-weight: 200;
+  letter-spacing: 4px;
+  color: rgba(255, 255, 255, 0.95);
+  text-decoration: none;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.25);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.fashion-normal-bar .nav-right {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 32px;
+}
+
+.fashion-normal-bar .text-search-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-family: inherit;
+  font-size: 11px;
+  font-weight: 200;
+  letter-spacing: 1px;
+  color: rgba(255, 255, 255, 0.88);
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.25);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.fashion-normal-bar .nav-link-item {
+  font-family: inherit;
+  font-size: 11px;
+  font-weight: 200;
+  letter-spacing: 1px;
+  color: rgba(255, 255, 255, 0.88);
+  text-decoration: none;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.25);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.fashion-normal-bar .icon-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  color: rgba(255, 255, 255, 0.88);
+  filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.25));
+}
+
+/* ============================================================
+   MODE SWITCH — TITLE CASE (FIRST LETTER CAPITAL ONLY)
+   ============================================================ */
+
+.mode-switch-container {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+}
+
+.fashion-normal-bar .mode-switch {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  border-radius: 14px;
+  padding: 1px 2px;
+  cursor: pointer;
+  outline: none;
+  gap: 0;
+}
+
+.fashion-normal-bar .switch-label {
+  position: relative;
+  z-index: 2;
+  min-width: auto;
+  padding: 2px 8px;
+  font-family: "Toteme Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  font-size: 11px;
+  font-weight: 200 !important;
+  letter-spacing: 0.5px;
+  text-transform: none !important;
+  color: rgba(255, 255, 255, 0.75) !important;
+  opacity: 0.9;
+  line-height: 1;
+  transition: opacity 0.3s ease, color 0.3s ease;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.fashion-normal-bar .switch-label.active {
+  font-family: "Toteme Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  font-size: 11px;
+  font-weight: 200 !important;
+  text-transform: none !important;
+  color: #FFFFFF !important;
+  opacity: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.fashion-normal-bar .switch-pill {
+  position: absolute;
+  top: 1px;
+  left: 2px;
+  width: calc(50% - 2px);
+  height: calc(100% - 2px);
+  background: rgba(255, 255, 255, 0.18);
+  border-radius: 12px;
+  transition: transform 0.35s cubic-bezier(0.25, 1, 0.5, 1);
+  z-index: 1;
+}
+
+body.beauty-mode .fashion-normal-bar .switch-pill {
+  transform: translateX(100%);
+}
+/* ============================================================
+   FASHION HEADER — STICKY STATE
+   ============================================================ */
+
+.fashion-sticky-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1002;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 40px;
+  height: 44px;
+  background-color: rgba(255, 255, 255, 0.85);
+  backdrop-filter: saturate(180%) blur(20px);
+  -webkit-backdrop-filter: saturate(180%) blur(20px);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+  font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "SF Pro Icons", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 12px;
+  font-weight: 300;
+  color: rgba(0, 0, 0, 0.78);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+.fashion-sticky-bar.is-visible {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* Left Wrap — Houses Mode Switch Cleanly */
+.sticky-left-wrap {
+  display: flex;
+  align-items: center;
+  flex: 1;
+}
+
+/* CENTER INLINE NAVIGATION LINKS */
+.sticky-nav-inline {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.sticky-nav-inline .nav-links {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.fashion-sticky-bar .fashion-nav li a {
+  position: relative;
+  font-family: inherit;
+  font-size: 12px;
+  font-weight: 300;
+  letter-spacing: -0.01em;
+  color: rgba(0, 0, 0, 0.78);
+  text-decoration: none;
+  padding-bottom: 4px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+/* Thin hover-only animated underline */
+.fashion-sticky-bar .fashion-nav li a::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0%;
+  height: 1px;
+  background-color: #8C8C8C;
+  transition: width 0.3s ease;
+}
+
+.fashion-sticky-bar .fashion-nav li a:hover {
+  color: rgba(0, 0, 0, 0.95);
+}
+
+.fashion-sticky-bar .fashion-nav li a:hover::after {
+  width: 100%;
+}
+
+.sticky-right-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 32px;
+  flex: 1;
+}
+
+.fashion-sticky-bar .search-icon {
+  color: rgba(0, 0, 0, 0.78);
+}
+
+.fashion-sticky-bar .icon-btn.sticky-icon {
+  background: none;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  color: rgba(0, 0, 0, 0.78);
+}
+
+
+/* ============================================================
+   SHARED BASE CLASSES (Used by both Fashion & Beauty — UNCHANGED)
+   ============================================================ */
 
 .mode-switch {
   background: none;
@@ -69,9 +366,13 @@ body.beauty-mode .beauty-header-block {
   display: flex;
   align-items: center;
   gap: 6px;
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-  font-size: 13px;
-  letter-spacing: 0.5px;
+  font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 12px;
+  font-weight: 300;
+  letter-spacing: -0.01em;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
 }
 
 .switch-label {
@@ -80,8 +381,7 @@ body.beauty-mode .beauty-header-block {
 }
 
 .switch-label.active {
-  color: #000000;
-  font-weight: 500;
+  color: rgba(0, 0, 0, 0.9);
 }
 
 .switch-divider {
@@ -97,54 +397,29 @@ body.beauty-mode .beauty-header-block {
 .site-logo {
   font-family: "Playfair Display", serif;
   font-size: 28px;
-  font-weight: 500;
+  font-weight: 400;
   letter-spacing: 3px;
-  color: #000000;
+  color: rgba(0, 0, 0, 0.9);
   text-decoration: none;
-}
-
-.search-wrapper {
-  flex: 1;
-  display: flex;
-  align-items: center;
-  justify-content: flex-end;
-  gap: 18px;
-  padding-right: 15px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
 }
 
 .search-icon {
   background: none;
   border: none;
   cursor: pointer;
-  color: #000000;
+  color: rgba(0, 0, 0, 0.8);
   display: flex;
   align-items: center;
-}
-
-.fashion-nav-row {
-  background-color: #FFFFFF;
-  display: flex;
-  align-items: center;
-  padding: 14px 40px;
-  position: relative;
-  z-index: 999;
-  border-bottom: 1px solid #EDEDED;
-}
-
-.fashion-nav-row.is-fixed {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  z-index: 1000;
-  box-shadow: 0 1px 6px rgba(0,0,0,0.06);
 }
 
 .nav-links {
   list-style: none;
   display: flex;
   justify-content: center;
-  gap: 42px;
+  gap: 28px;
   margin: 0 auto;
   padding: 0;
   flex: 1;
@@ -152,18 +427,6 @@ body.beauty-mode .beauty-header-block {
 
 .nav-arrow {
   display: none;
-}
-
-.fashion-nav li a {
-  font-family: "Louis Vuitton Web", "Louis Vuitton Web Fallback", "Helvetica Neue", Helvetica, Arial, sans-serif;
-  font-size: 13px;
-  font-weight: 300;
-  letter-spacing: 0.4px;
-  color: #1A1A1A;
-  text-decoration: none;
-  position: relative;
-  padding-bottom: 6px;
-  transition: color 0.25s ease;
 }
 
 .nav-links li a::after {
@@ -184,29 +447,8 @@ body.beauty-mode .beauty-header-block {
 .nav-links li a:hover::after {
   width: 100%;
 }
-
-.nav-logo-small {
-  font-family: "Playfair Display", serif;
-  font-size: 18px;
-  font-weight: 500;
-  letter-spacing: 1.5px;
-  color: #000000;
-  text-decoration: none;
-  opacity: 0;
-  width: 0;
-  overflow: hidden;
-  white-space: nowrap;
-  transition: all 0.3s ease;
-}
-
-.fashion-nav-row.is-fixed .nav-logo-small {
-  opacity: 1;
-  width: auto;
-  margin-right: 40px;
-}
-
 /* ============================================================
-   BEAUTY: BLACK PROMO BAR (DESKTOP DEFAULT)
+   BEAUTY: BLACK PROMO BAR (DESKTOP DEFAULT) — FIXED PADDING
    ============================================================ */
 .beauty-promo-bar {
   position: relative;
@@ -214,7 +456,7 @@ body.beauty-mode .beauty-header-block {
   align-items: center;
   justify-content: center;
   background-color: #14141A;
-  padding: 9px 40px;
+  padding: 9px 40px; /* Restored from 99px to 9px */
   width: 100%;
 }
 
@@ -235,7 +477,6 @@ body.beauty-mode .beauty-header-block {
 
 .beauty-switch .switch-label.active {
   color: #FFFFFF;
-  font-weight: 500;
 }
 
 .beauty-switch .switch-divider {
@@ -254,7 +495,7 @@ body.beauty-mode .beauty-header-block {
 }
 
 /* ============================================================
-   BEAUTY HEADER STYLES (DESKTOP DEFAULT)
+   BEAUTY HEADER STYLES (DESKTOP DEFAULT) — UNCHANGED
    ============================================================ */
 .beauty-main-row {
   position: relative;
@@ -339,7 +580,7 @@ body.beauty-mode .beauty-header-block {
 }
 
 /* ============================================================
-   SEARCH BOX (Shared)
+   SEARCH BOX (Shared) — UNCHANGED
    ============================================================ */
 .search-box {
   display: none;
@@ -377,7 +618,7 @@ body.beauty-mode .beauty-header-block {
 }
 
 /* ============================================================
-   MOBILE HAMBURGER (hidden by default on desktop)
+   MOBILE HAMBURGER (hidden by default on desktop) — UNCHANGED
    ============================================================ */
 .nav-toggle {
   display: none;
@@ -409,7 +650,7 @@ body.beauty-mode .beauty-header-block {
 }
 
 /* ============================================================
-   RESPONSIVE: TABLET
+   RESPONSIVE: TABLET — UNCHANGED
    ============================================================ */
 @media (max-width: 1024px) {
   .top-bar, .fashion-nav-row, .beauty-inner {
@@ -425,7 +666,7 @@ body.beauty-mode .beauty-header-block {
 }
 
 /* ============================================================
-   RESPONSIVE: MOBILE
+   RESPONSIVE: MOBILE — UNCHANGED
    ============================================================ */
 @media (max-width: 768px) {
 
@@ -452,7 +693,7 @@ body.beauty-mode .beauty-header-block {
     padding: 14px 20px;
     background-color: #FFFFFF;
   }
-    .top-bar.is-fixed-mobile {
+  .top-bar.is-fixed-mobile {
     position: fixed;
     top: 0;
     left: 0;
@@ -461,18 +702,15 @@ body.beauty-mode .beauty-header-block {
     box-shadow: 0 1px 6px rgba(0,0,0,0.06);
   }
 
-  /* Switch ko top-bar se chhupa kar upper strip me bhejne ke liye */
   .top-bar .switch-wrapper {
     display: none !important;
   }
 
-  /* Hamburger Menu (≡) ko Left align karne ke liye */
   .top-bar .nav-toggle {
     display: flex !important;
     z-index: 2;
   }
 
-  /* Logo ko bilkul Center me lane ke liye */
   .top-bar .logo-wrapper {
     position: absolute !important;
     left: 50% !important;
@@ -487,14 +725,12 @@ body.beauty-mode .beauty-header-block {
     letter-spacing: 1.5px;
   }
 
-  /* Search Icon ko Right align karne ke liye */
   .top-bar .search-wrapper {
     flex: 0 0 auto !important;
     gap: 0 !important;
     padding-right: 0 !important;
   }
 
-  /* 3. BEAUTY MOBILE MENU FIX */
   .beauty-header-block {
     position: relative;
     z-index: 10000;
@@ -503,7 +739,7 @@ body.beauty-mode .beauty-header-block {
   .beauty-nav-wrap {
     display: none;
     position: fixed !important;
-    top: 47px !important; /* Beauty header ke bilkul neche se shuru hoga */
+    top: 47px !important;
     left: 0 !important;
     width: 100vw !important;
     height: calc(100vh - 47px) !important;
@@ -541,8 +777,6 @@ body.beauty-mode .beauty-header-block {
     display: none !important;
   }
 
-  /* -------- FASHION FULL SCREEN OVERLAY -------- */
-
   .fashion-header-block {
     position: relative;
   }
@@ -554,7 +788,7 @@ body.beauty-mode .beauty-header-block {
     box-shadow: none;
   }
 
-    .fashion-nav {
+  .fashion-nav {
     display: none;
     flex-direction: column;
     position: fixed;
@@ -573,8 +807,6 @@ body.beauty-mode .beauty-header-block {
     display: flex;
   }
 
-  /* -------- BEAUTY MOBILE: PROMO BAR -------- */
-
   .beauty-promo-bar {
     flex-direction: row;
     justify-content: flex-start;
@@ -592,8 +824,6 @@ body.beauty-mode .beauty-header-block {
   .promo-text {
     display: none;
   }
-
-  /* -------- BEAUTY MOBILE: MAIN ROW -------- */
 
   .beauty-header-block {
     position: relative;
@@ -636,8 +866,6 @@ body.beauty-mode .beauty-header-block {
     padding-right: 0;
   }
 
-  /* -------- BEAUTY FULL SCREEN OVERLAY -------- */
-
   .beauty-nav-wrap {
     display: none;
     position: absolute;
@@ -662,8 +890,6 @@ body.beauty-mode .beauty-header-block {
     gap: 0;
     padding: 0;
   }
-
-  /* -------- SHARED: LIST ITEM STYLE -------- */
 
   .nav-links li {
     width: 100%;
@@ -2037,188 +2263,282 @@ body.beauty-mode .beauty-mode-content {
     border-radius: 50%;
     background-color: #D5D5D5;
   }
-/* ============================================
-   NEWSLETTER SECTION
-============================================ */
-.nl-section {
-  width: 100%;
-  padding: 80px 6%;
+
+/* ==================== FOOTER BASE ==================== */
+
+.site-footer {
   background-color: #F7F6F4;
-  text-align: center;
+  border-top: 1px solid #E2E0DC;
+  padding: 60px 80px 30px;
+  font-family: 'Playfair Display', serif;
+  color: #1C1C1C;
 }
 
-.nl-container {
-  max-width: 560px;
-  margin: 0 auto;
+.footer-content-block {
+  width: 100%;
 }
 
-.nl-title {
-  font-family: "Louis Vuitton Web", "Helvetica Neue", Helvetica, Arial, sans-serif;
+
+/* ==================== TOP SECTION: Logo + Newsletter ==================== */
+
+.footer-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 30px;
+  padding-bottom: 40px;
+  border-bottom: 1px solid #E2E0DC;
+}
+
+.brand-block .logo {
   font-size: 28px;
-  font-weight: 300;
-  color: #1A1A1A;
+  letter-spacing: 4px;
+  margin: 0 0 8px;
+  font-weight: 400;
+  color: #1C1C1C;
+}
+
+.brand-block .tagline {
+  font-size: 11px;
+  color: #666666;
+  margin: 0;
+  letter-spacing: 1.5px;
+  font-family: system-ui, -apple-system, sans-serif;
+}
+
+.newsletter {
+  min-width: 280px;
+}
+
+.newsletter label {
+  display: block;
+  font-size: 10px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #1C1C1C;
   margin-bottom: 12px;
+  font-family: system-ui, -apple-system, sans-serif;
 }
 
-.nl-subtext {
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-  font-size: 14px;
-  font-weight: 300;
-  color: #6E6E6E;
-  line-height: 1.6;
-  margin-bottom: 34px;
-}
-
-.nl-form {
+.newsletter-form {
   display: flex;
   align-items: center;
-  justify-content: center;
-  border-bottom: 1px solid #1A1A1A;
-  max-width: 420px;
-  margin: 0 auto;
-  padding-bottom: 8px;
+  gap: 15px;
 }
 
-.nl-input {
+.newsletter-form input[type="email"] {
   flex: 1;
   border: none;
-  background: transparent;
-  outline: none;
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-  font-size: 14px;
-  font-weight: 300;
-  color: #1A1A1A;
-  padding: 8px 4px;
-}
-
-.nl-input::placeholder {
-  color: #A0A0A0;
-}
-
-.nl-button {
-  background: none;
-  border: none;
-  cursor: pointer;
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  border-bottom: 1px solid #1C1C1C;
+  padding: 8px 0;
   font-size: 12px;
-  font-weight: 400;
-  letter-spacing: 1px;
-  text-transform: uppercase;
-  color: #1A1A1A;
-  text-decoration: underline;
-  white-space: nowrap;
-  padding: 8px 4px;
+  outline: none;
+  background: transparent;
+  min-width: 220px;
+  color: #1C1C1C;
 }
 
-@media (max-width: 768px) {
-  .nl-section {
-    padding: 50px 6%;
-  }
-  .nl-title {
-    font-size: 21px;
-  }
-  .nl-subtext {
-    font-size: 12.5px;
-  }
-  .nl-form {
-    max-width: 100%;
-  }
-  .nl-input, .nl-button {
-    font-size: 12.5px;
-  }
-}
-/* ============================================
-   FOOTER
-============================================ */
-.site-footer {
-  width: 100%;
-  background-color: #14141A;
-  color: #FFFFFF;
-  padding: 70px 6% 0;
+.newsletter-form input[type="email"]::placeholder {
+  color: #777777;
 }
 
-.footer-container {
-  max-width: 1440px;
-  margin: 0 auto;
-  display: grid;
-  grid-template-columns: 1.6fr 1fr 1fr 1fr;
-  gap: 40px;
-  padding-bottom: 50px;
-  border-bottom: 1px solid rgba(255,255,255,0.12);
-}
-
-.footer-logo {
-  font-family: "Playfair Display", serif;
-  font-size: 24px;
+.newsletter-form button {
+  background: transparent;
+  color: #1C1C1C;
+  border: 1px solid #1C1C1C;
+  padding: 8px 20px;
+  font-size: 10px;
   letter-spacing: 2px;
-  color: #FFFFFF;
-  text-decoration: none;
-}
-
-.footer-tagline {
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-  font-size: 13px;
-  font-weight: 300;
-  color: rgba(255,255,255,0.6);
-  margin-top: 14px;
-  line-height: 1.6;
-  max-width: 260px;
-}
-
-.footer-heading {
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-  font-size: 12.5px;
-  font-weight: 500;
-  letter-spacing: 1px;
   text-transform: uppercase;
-  color: #FFFFFF;
-  margin-bottom: 18px;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: all 0.3s ease;
 }
 
-.footer-links {
+.newsletter-form button:hover {
+  background: #1C1C1C;
+  color: #F7F6F4;
+}
+
+
+/* ==================== FOOTER COLUMNS ==================== */
+
+.footer-columns {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 30px;
+  padding: 40px 0;
+  border-bottom: 1px solid #E2E0DC;
+}
+
+.footer-columns .col {
+  flex: 1;
+  min-width: 160px;
+}
+
+.footer-columns h4 {
+  font-size: 11px;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  margin: 0 0 24px;
+  font-weight: 400;
+  color: #1C1C1C;
+  font-family: system-ui, -apple-system, sans-serif;
+}
+
+.footer-columns ul {
   list-style: none;
+  margin: 0;
   padding: 0;
 }
 
-.footer-links li {
-  margin-bottom: 12px;
+.footer-columns ul li {
+  margin-bottom: 14px;
 }
 
-.footer-links a {
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+.footer-columns ul li a {
   font-size: 13px;
-  font-weight: 300;
-  color: rgba(255,255,255,0.7);
+  color: #555555;
   text-decoration: none;
+  font-family: 'Playfair Display', serif;
+  transition: color 0.2s ease;
+}
+
+.footer-columns ul li a:hover {
+  color: #000000;
+  text-decoration: none;
+}
+
+
+/* ==================== FOOTER BOTTOM ==================== */
+
+.footer-bottom {
+  padding-top: 25px;
+}
+
+.footer-bottom .disclaimer {
+  font-size: 11px;
+  font-weight: 300;
+  color: #777777;
+  line-height: 1.6;
+  max-width: 650px;
+  margin: 0 0 20px;
+  font-family: system-ui, -apple-system, sans-serif;
+}
+
+.bottom-links {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 15px;
+  font-size: 11px;
+  font-family: system-ui, -apple-system, sans-serif;
+}
+
+.bottom-links .copyright {
+  color: #777777;
+  font-weight: 300;
+}
+
+/* Links group — right corner mein close together */
+.bottom-links .links-group {
+  display: flex;
+  gap: 20px;
+}
+
+.bottom-links .links-group a {
+  color: #777777;
+  font-weight: 300;
+  text-decoration: none;
+  letter-spacing: 0.3px;
   transition: color 0.25s ease;
 }
 
-.footer-links a:hover {
-  color: #FFFFFF;
+.bottom-links .links-group a:hover {
+  color: #000000;
+  text-decoration: none;
 }
 
-.footer-bottom {
-  text-align: center;
-  padding: 22px 0;
-}
 
-.footer-bottom p {
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-  font-size: 11.5px;
-  font-weight: 300;
-  color: rgba(255,255,255,0.45);
-  letter-spacing: 0.5px;
-}
+/* ==================== RESPONSIVE ==================== */
 
 @media (max-width: 768px) {
   .site-footer {
-    padding: 50px 6% 0;
+    padding: 40px 24px 20px;
   }
-  .footer-container {
-    grid-template-columns: 1fr 1fr;
-    gap: 32px;
+
+  .footer-top {
+    flex-direction: column;
   }
-  .footer-brand {
-    grid-column: span 2;
+
+  .footer-columns {
+    flex-direction: column;
+    gap: 30px;
   }
+
+  .bottom-links {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+
+  .bottom-links .links-group {
+    flex-wrap: wrap;
+    gap: 18px;
+  }
+}
+
+/* ==================== FOOTER BOTTOM ==================== */
+
+.footer-bottom {
+  padding-top: 25px;
+  font-family: 'Playfair Display', 'Georgia', serif; /* Serif font for exact match */
+}
+
+.footer-bottom .disclaimer {
+  font-size: 11px;
+  font-weight: 300;
+  color: #777777;
+  line-height: 1.6;
+  max-width: 650px;
+  margin: 0 0 20px;
+  font-family: system-ui, -apple-system, sans-serif;
+}
+
+.bottom-links {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 15px;
+  font-size: 12px;
+}
+
+.bottom-links .copyright {
+  color: #777777;
+  font-weight: normal;
+  font-family: 'Playfair Display', 'Georgia', serif; /* Image 1 Serif Font */
+}
+
+/* Links group — right corner */
+.bottom-links .links-group {
+  display: flex;
+  gap: 20px;
+}
+
+.bottom-links .links-group a {
+  color: #777777;
+  font-weight: normal;
+  text-decoration: none;
+  font-size: 11px;
+  font-family: system-ui, -apple-system, sans-serif;
+  transition: color 0.25s ease;
+}
+
+.bottom-links .links-group a:hover {
+  color: #000000;
+  text-decoration: none;
 }

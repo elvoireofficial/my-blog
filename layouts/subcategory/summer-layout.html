@@ -1,0 +1,23 @@
+{{ define "main" }}
+
+  <!-- Unique Summer Hero / Banner Section -->
+  <section class="summer-hero-banner">
+    <h1>{{ .Title }}</h1>
+    <p>Exclusive Summer Fashion Collection</p>
+  </section>
+
+  <!-- Unique Summer Gallery / Posts Grid -->
+  <section class="summer-gallery-grid">
+    {{ range .Pages }}
+      <div class="summer-card">
+        <a href="{{ .RelPermalink }}">
+          {{ if .Params.image }}
+            <img src="{{ .Params.image }}" alt="{{ .Title }}">
+          {{ end }}
+          <h3>{{ .Title }}</h3>
+        </a>
+      </div>
+    {{ end }}
+  </section>
+
+{{ end }}

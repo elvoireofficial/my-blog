@@ -9,6 +9,8 @@ document.addEventListener('DOMContentLoaded', function () {
   var topBar = document.querySelector(".top-bar");
   var fashionNavRow = document.getElementById("fashionNavRow");
   var beautyInner = document.querySelector(".beauty-inner");
+  var fashionNormalBar = document.querySelector(".fashion-normal-bar");
+  var fashionStickyBar = document.getElementById("fashionStickyBar");
   var reinitElvCarousel = null;
 
   // ===== HERO ELEMENTS =====
@@ -31,11 +33,13 @@ document.addEventListener('DOMContentLoaded', function () {
 
     if (topBar) topBar.classList.remove("is-fixed-mobile");
     if (beautyInner) beautyInner.classList.remove("is-fixed-mobile");
-    if (fashionNavRow) fashionNavRow.classList.remove("is-fixed");
+    if (fashionStickyBar) fashionStickyBar.classList.remove("is-visible");
+    if (fashionNormalBar) fashionNormalBar.classList.remove("is-hidden");
     if (beautyHeaderBlock) beautyHeaderBlock.classList.remove("is-fixed");
     if (headerSpacer) headerSpacer.style.height = "0px";
+    updateFooterCategory(mode);
 
-        // ===== GALLERIES + BANNER SWITCH LOGIC =====
+    // ===== GALLERIES + BANNER SWITCH LOGIC =====
     var fashionModeBlocks = document.querySelectorAll(".fashion-mode-content");
     var beautyModeBlocks = document.querySelectorAll(".beauty-mode-content");
 
@@ -86,7 +90,7 @@ document.addEventListener('DOMContentLoaded', function () {
     var isMobile = window.innerWidth <= 768;
     var isBeauty = body.classList.contains("beauty-mode");
 
-        // Mobile Sticky Logic
+    // Mobile Sticky Logic
     if (isMobile) {
       var mobileHeaderEl = isBeauty ? beautyInner : topBar;
 
@@ -102,12 +106,14 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // Desktop Sticky Logic
     if (!isBeauty) {
-      if (topBar && window.scrollY > topBar.offsetHeight && fashionNavRow && headerSpacer) {
-        fashionNavRow.classList.add("is-fixed");
-        headerSpacer.style.height = fashionNavRow.offsetHeight + "px";
-      } else if (fashionNavRow && headerSpacer) {
-        fashionNavRow.classList.remove("is-fixed");
-        headerSpacer.style.height = "0px";
+      var scrollThreshold = 80;
+
+      if (window.scrollY > scrollThreshold) {
+        if (fashionStickyBar) fashionStickyBar.classList.add("is-visible");
+        if (fashionNormalBar) fashionNormalBar.classList.add("is-hidden");
+      } else {
+        if (fashionStickyBar) fashionStickyBar.classList.remove("is-visible");
+        if (fashionNormalBar) fashionNormalBar.classList.remove("is-hidden");
       }
     } else {
       if (window.scrollY > 30 && beautyHeaderBlock && headerSpacer) {
@@ -159,14 +165,13 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   }
 
-    // ================= MOBILE NAV TOGGLES =================
+  // ================= MOBILE NAV TOGGLES =================
   var navToggleFashion = document.getElementById("navToggleFashion");
   var fashionNav = document.getElementById("fashionNav");
 
   var navToggleBeauty = document.getElementById("navToggleBeauty");
   var beautyNavWrap = document.getElementById("beautyNavWrap");
 
-  // Header ki live (real-time) position dekh kar menu ko uske bilkul neeche fit karta hai
   function positionMobileNav(navEl, headerEl) {
     if (!navEl || !headerEl) return;
     var headerBottom = headerEl.getBoundingClientRect().bottom;
@@ -288,13 +293,13 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   }
 
-  // ================= ELV CAROUSEL (EXACT PERFECT CENTER 2-CARD LOCK) =================
+  // ================= ELV CAROUSEL =================
   const track = document.getElementById('elvTrack');
   const prevBtn = document.getElementById('elvPrev');
   const nextBtn = document.getElementById('elvNext');
 
   if (track) {
-        let autoTimer;
+    let autoTimer;
     let transitionEndHandler = null;
 
     function initCarousel() {
@@ -336,12 +341,10 @@ document.addEventListener('DOMContentLoaded', function () {
         const firstCard = track.querySelector('.elv-slide');
         if (!firstCard) return;
 
-        // Exact width measurement including natural margins
         const cardWidth = firstCard.getBoundingClientRect().width;
         const style = window.getComputedStyle(track);
         const gap = parseFloat(style.gap) || 0;
 
-        // Perfect step amount to move exactly 1 card without dragging off-center
         cardStep = cardWidth + gap;
       }
 
@@ -360,7 +363,7 @@ document.addEventListener('DOMContentLoaded', function () {
         setPosition(true);
       }
 
-           if (transitionEndHandler) {
+      if (transitionEndHandler) {
         track.removeEventListener('transitionend', transitionEndHandler);
       }
 
@@ -397,7 +400,6 @@ document.addEventListener('DOMContentLoaded', function () {
         };
       }
 
-      // Initialize calculations cleanly
       requestAnimationFrame(() => {
         measureStep();
         setPosition(false);
@@ -405,10 +407,10 @@ document.addEventListener('DOMContentLoaded', function () {
       });
     }
 
-        reinitElvCarousel = initCarousel;
+    reinitElvCarousel = initCarousel;
     initCarousel();
 
-           let resizeTimeout;
+    let resizeTimeout;
     const elvWrap = track.closest('.elv-carousel-wrap');
 
     if (elvWrap && window.ResizeObserver) {
@@ -424,94 +426,107 @@ document.addEventListener('DOMContentLoaded', function () {
       });
     }
   }
-    switchMode("fashion");
+  switchMode("fashion");
 
 });
-    // ================= SHOP THE LOOK / RITUAL EDIT CAROUSEL (Reusable) =================
-  function createShopCarousel(trackEl, prevEl, nextEl) {
-    if (!trackEl) return;
+// ================= SHOP THE LOOK / RITUAL EDIT CAROUSEL (Reusable) =================
+function createShopCarousel(trackEl, prevEl, nextEl) {
+  if (!trackEl) return;
 
-    let autoTimer;
-    let transitionEndHandler = null;
-    let startAutoplayFn = function () {};
+  let autoTimer;
+  let transitionEndHandler = null;
+  let startAutoplayFn = function () {};
 
-    function init() {
-      trackEl.querySelectorAll('.stl-clone').forEach(el => el.remove());
+  function init() {
+    trackEl.querySelectorAll('.stl-clone').forEach(el => el.remove());
 
-      const realSlides = Array.from(trackEl.children);
-      const realCount = realSlides.length;
-      if (realCount === 0) return;
+    const realSlides = Array.from(trackEl.children);
+    const realCount = realSlides.length;
+    if (realCount === 0) return;
 
-      const firstClones = realSlides.map(node => { const c = node.cloneNode(true); c.classList.add('stl-clone'); return c; });
-      const lastClones = realSlides.map(node => { const c = node.cloneNode(true); c.classList.add('stl-clone'); return c; });
+    const firstClones = realSlides.map(node => { const c = node.cloneNode(true); c.classList.add('stl-clone'); return c; });
+    const lastClones = realSlides.map(node => { const c = node.cloneNode(true); c.classList.add('stl-clone'); return c; });
 
-      lastClones.forEach(clone => trackEl.insertBefore(clone, trackEl.firstChild));
-      firstClones.forEach(clone => trackEl.appendChild(clone));
+    lastClones.forEach(clone => trackEl.insertBefore(clone, trackEl.firstChild));
+    firstClones.forEach(clone => trackEl.appendChild(clone));
 
-      let currentIndex = realCount;
-      let cardStep = 0;
-      const TRANSITION_MS = 800;
-      const AUTOPLAY_MS = 3500;
+    let currentIndex = realCount;
+    let cardStep = 0;
+    const TRANSITION_MS = 800;
+    const AUTOPLAY_MS = 3500;
 
-      function measureStep() {
-        const firstCard = trackEl.querySelector('.stl-slide');
-        if (!firstCard) return;
-        const cardWidth = firstCard.getBoundingClientRect().width;
-        const style = window.getComputedStyle(trackEl);
-        const gap = parseFloat(style.gap) || 0;
-        cardStep = cardWidth + gap;
-      }
-
-      function setPosition(withTransition) {
-        trackEl.style.transition = withTransition ? `transform ${TRANSITION_MS}ms cubic-bezier(0.25, 1, 0.5, 1)` : 'none';
-        trackEl.style.transform = `translateX(${-currentIndex * cardStep}px)`;
-      }
-
-      function goNext() { currentIndex++; setPosition(true); }
-      function goPrev() { currentIndex--; setPosition(true); }
-
-      if (transitionEndHandler) trackEl.removeEventListener('transitionend', transitionEndHandler);
-      transitionEndHandler = function () {
-        if (currentIndex >= realCount * 2) { currentIndex = realCount; setPosition(false); }
-        else if (currentIndex < realCount) { currentIndex = realCount * 2 - 1; setPosition(false); }
-      };
-      trackEl.addEventListener('transitionend', transitionEndHandler);
-
-      function startAutoplay() {
-        clearInterval(autoTimer);
-        autoTimer = setInterval(goNext, AUTOPLAY_MS);
-      }
-      startAutoplayFn = startAutoplay;
-
-      if (nextEl) nextEl.onclick = function (e) { if (e) e.preventDefault(); goNext(); startAutoplay(); };
-      if (prevEl) prevEl.onclick = function (e) { if (e) e.preventDefault(); goPrev(); startAutoplay(); };
-
-      requestAnimationFrame(() => { measureStep(); setPosition(false); startAutoplay(); });
+    function measureStep() {
+      const firstCard = trackEl.querySelector('.stl-slide');
+      if (!firstCard) return;
+      const cardWidth = firstCard.getBoundingClientRect().width;
+      const style = window.getComputedStyle(trackEl);
+      const gap = parseFloat(style.gap) || 0;
+      cardStep = cardWidth + gap;
     }
 
-    init();
-
-    let resizeTimeout;
-    const wrapEl = trackEl.closest('.stl-carousel-wrap');
-
-    if (wrapEl && window.ResizeObserver) {
-      const ro = new ResizeObserver(function () {
-        clearTimeout(resizeTimeout);
-        resizeTimeout = setTimeout(init, 150);
-      });
-      ro.observe(wrapEl);
-    } else {
-      window.addEventListener('resize', function () {
-        clearTimeout(resizeTimeout);
-        resizeTimeout = setTimeout(init, 150);
-      });
+    function setPosition(withTransition) {
+      trackEl.style.transition = withTransition ? `transform ${TRANSITION_MS}ms cubic-bezier(0.25, 1, 0.5, 1)` : 'none';
+      trackEl.style.transform = `translateX(${-currentIndex * cardStep}px)`;
     }
 
-    if (wrapEl) {
-      wrapEl.addEventListener('mouseenter', function () { clearInterval(autoTimer); });
-      wrapEl.addEventListener('mouseleave', function () { startAutoplayFn(); });
+    function goNext() { currentIndex++; setPosition(true); }
+    function goPrev() { currentIndex--; setPosition(true); }
+
+    if (transitionEndHandler) trackEl.removeEventListener('transitionend', transitionEndHandler);
+    transitionEndHandler = function () {
+      if (currentIndex >= realCount * 2) { currentIndex = realCount; setPosition(false); }
+      else if (currentIndex < realCount) { currentIndex = realCount * 2 - 1; setPosition(false); }
+    };
+    trackEl.addEventListener('transitionend', transitionEndHandler);
+
+    function startAutoplay() {
+      clearInterval(autoTimer);
+      autoTimer = setInterval(goNext, AUTOPLAY_MS);
     }
+    startAutoplayFn = startAutoplay;
+
+    if (nextEl) nextEl.onclick = function (e) { if (e) e.preventDefault(); goNext(); startAutoplay(); };
+    if (prevEl) prevEl.onclick = function (e) { if (e) e.preventDefault(); goPrev(); startAutoplay(); };
+
+    requestAnimationFrame(() => { measureStep(); setPosition(false); startAutoplay(); });
   }
 
-  createShopCarousel(document.getElementById('stlTrack'), document.getElementById('stlPrev'), document.getElementById('stlNext'));
-  createShopCarousel(document.getElementById('gtlTrack'), document.getElementById('gtlPrev'), document.getElementById('gtlNext'));
+  init();
+
+  let resizeTimeout;
+  const wrapEl = trackEl.closest('.stl-carousel-wrap');
+
+  if (wrapEl && window.ResizeObserver) {
+    const ro = new ResizeObserver(function () {
+      clearTimeout(resizeTimeout);
+      resizeTimeout = setTimeout(init, 150);
+    });
+    ro.observe(wrapEl);
+  } else {
+    window.addEventListener('resize', function () {
+      clearTimeout(resizeTimeout);
+      resizeTimeout = setTimeout(init, 150);
+    });
+  }
+
+  if (wrapEl) {
+    wrapEl.addEventListener('mouseenter', function () { clearInterval(autoTimer); });
+    wrapEl.addEventListener('mouseleave', function () { startAutoplayFn(); });
+  }
+}
+
+createShopCarousel(document.getElementById('stlTrack'), document.getElementById('stlPrev'), document.getElementById('stlNext'));
+createShopCarousel(document.getElementById('gtlTrack'), document.getElementById('gtlPrev'), document.getElementById('gtlNext'));
+
+function updateFooterCategory(activeCategory) {
+  const fashionBlock = document.getElementById('footer-fashion-content');
+  const beautyBlock = document.getElementById('footer-beauty-content');
+
+  if (activeCategory === 'beauty') {
+    fashionBlock.style.display = 'none';
+    beautyBlock.style.display = 'block';
+  } else {
+    fashionBlock.style.display = 'block';
+    beautyBlock.style.display = 'none';
+  }
+}

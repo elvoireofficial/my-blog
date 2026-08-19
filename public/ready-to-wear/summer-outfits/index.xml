@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
 	<channel>
-		<title>ÉLVOIRE</title>
-		<link>http://localhost:1313/</link>
-		<description>Recent content on ÉLVOIRE</description>
+		<title>Summer Outfits on ÉLVOIRE</title>
+		<link>http://localhost:1313/ready-to-wear/summer-outfits/</link>
+		<description>Recent content in Summer Outfits on ÉLVOIRE</description>
 		<generator>Hugo</generator>
 		<language>en-us</language>
 		
@@ -12,7 +12,7 @@
 		
 			<lastBuildDate>Mon, 17 Aug 2026 00:00:00 +0000</lastBuildDate>
 		
-			<atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
+			<atom:link href="http://localhost:1313/ready-to-wear/summer-outfits/index.xml" rel="self" type="application/rss+xml" />
 			<item>
 				<title>Top 10 Floral Dresses for Summer</title>
 				<link>http://localhost:1313/ready-to-wear/summer-outfits/floral-summer-dress/</link>

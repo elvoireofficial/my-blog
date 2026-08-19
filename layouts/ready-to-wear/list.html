@@ -1,0 +1,1728 @@
+<!-- 1. STICKY HEADER -->
+<header class="elvoire-sticky-header">
+  <div class="header-left">
+    <a href="/" class="brand-logo">ÉLVOIRE</a>
+  </div>
+  
+  <nav class="header-center desktop-only">
+    <a href="/ready-to-wear/dresses/">Dresses</a>
+    <a href="/ready-to-wear/coats-jackets/">Coats & Jackets</a>
+    <a href="/ready-to-wear/knitwear/">Knitwear</a>
+    <a href="/ready-to-wear/tops-shirts/">Tops & Shirts</a>
+    <a href="/ready-to-wear/pants-denim/">Pants & Denim</a>
+    <a href="/ready-to-wear/skirts/">Skirts</a>
+  </nav>
+
+  <!-- Desktop Header Right -->
+  <div class="header-right desktop-only">
+    <button class="icon-btn" aria-label="Search">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#2E2E2E" stroke-width="1.5"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+    </button>
+    <button class="icon-btn" aria-label="Account">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#2E2E2E" stroke-width="1.5"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+    </button>
+    <button class="icon-btn" aria-label="Cart">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#2E2E2E" stroke-width="1.5"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"/><path d="M3 6h18"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+    </button>
+  </div>
+
+  <!-- Mobile Header Right (Only Icons) -->
+  <div class="header-right mobile-only">
+    <button class="icon-btn" aria-label="Search">
+      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#111111" stroke-width="1.5"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+    </button>
+
+    <button class="mobile-menu-btn" aria-label="Menu" onclick="toggleMobileMenu()">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+  </div>
+</header>
+
+<!-- 2. MOBILE DRAWER & OVERLAY (HEADER KE BAHAR) -->
+<div class="mobile-menu-overlay" id="mobileOverlay" onclick="toggleMobileMenu()"></div>
+
+<div class="mobile-drawer" id="mobileDrawer">
+  <div class="drawer-header">
+    <span class="brand-logo">ÉLVOIRE</span>
+    <button class="close-btn" onclick="toggleMobileMenu()" aria-label="Close Menu">✕</button>
+  </div>
+
+  <div class="drawer-search-row">
+    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#888888" stroke-width="1.5"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+    <input type="text" placeholder="Search articles..." class="drawer-search-input" />
+  </div>
+
+  <nav class="drawer-nav">
+    <a href="/ready-to-wear/dresses/" class="nav-item-row">Dresses</a>
+    <a href="/ready-to-wear/coats-jackets/" class="nav-item-row">Coats & Jackets</a>
+    <a href="/ready-to-wear/knitwear/" class="nav-item-row">Knitwear</a>
+    <a href="/ready-to-wear/tops-shirts/" class="nav-item-row">Tops & Shirts</a>
+    <a href="/ready-to-wear/pants-denim/" class="nav-item-row">Pants & Denim</a>
+    <a href="/ready-to-wear/skirts/" class="nav-item-row">Skirts</a>
+  </nav>
+
+  <div class="drawer-footer">
+    <a href="/handbags/" class="footer-link">Handbags & Leather Goods</a>
+    <a href="/shoes/" class="footer-link">Footwear Edit</a>
+    <a href="/jewelry-accessories/" class="footer-link">High Jewelry & Accents</a>
+  </div>
+</div>
+
+<script>
+  function toggleMobileMenu() {
+    const drawer = document.getElementById('mobileDrawer');
+    const overlay = document.getElementById('mobileOverlay');
+    if (drawer && overlay) {
+      drawer.classList.toggle('active');
+      overlay.classList.toggle('active');
+    }
+  }
+</script>
+
+  <!-- 2. REPEATING EDITORIAL GALLERY PATTERN -->
+  <div class="editorial-flow">
+
+    <!-- REPEAT 1 - BLOCK A: 2 LARGE GALLERIES -->
+    <section class="block-a-large">
+      <a href="/ready-to-wear/new-arrivals/" class="large-gallery-card">
+        <img src="https://images.unsplash.com/photo-1490481651871-ab68de25d43d?q=80&w=1200" alt="New Arrivals" loading="lazy">
+        <span class="large-gallery-title">New Arrivals</span>
+      </a>
+      <a href="/ready-to-wear/evening-formal/" class="large-gallery-card">
+        <img src="https://images.unsplash.com/photo-1539109136881-3be0616acf4b?q=80&w=1200" alt="Evening & Formal Wear" loading="lazy">
+        <span class="large-gallery-title">Evening & Formal Wear</span>
+      </a>
+    </section>
+
+    <!-- REPEAT 1 - BLOCK B: 4 SMALL GALLERIES -->
+    <section class="block-b-small">
+      <a href="/ready-to-wear/dresses/" class="small-gallery-card">
+        <img src="https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?q=80&w=600" alt="Dresses" loading="lazy">
+        <span class="small-gallery-title">Dresses</span>
+      </a>
+      <a href="/ready-to-wear/tailored-sets/" class="small-gallery-card">
+        <img src="https://images.unsplash.com/photo-1509631179647-0177331693ae?q=80&w=600" alt="Tailored Sets" loading="lazy">
+        <span class="small-gallery-title">Tailored Sets</span>
+      </a>
+      <a href="/ready-to-wear/tops-shirts/" class="small-gallery-card">
+        <img src="https://images.unsplash.com/photo-1521572267360-ee0c2909d518?q=80&w=600" alt="Tops & Shirts" loading="lazy">
+        <span class="small-gallery-title">Tops & Shirts</span>
+      </a>
+      <a href="/ready-to-wear/pants-denim/" class="small-gallery-card">
+        <img src="https://images.unsplash.com/photo-1584273143981-41c073dfe8f8?q=80&w=600" alt="Pants & Denim" loading="lazy">
+        <span class="small-gallery-title">Pants & Denim</span>
+      </a>
+    </section>
+
+    <!-- REPEAT 2 - BLOCK A: 2 LARGE GALLERIES -->
+    <section class="block-a-large">
+      <a href="/ready-to-wear/coats-jackets/" class="large-gallery-card">
+        <img src="https://images.unsplash.com/photo-1516762689617-e1cffffd478d?q=80&w=1200" alt="Coats & Jackets" loading="lazy">
+        <span class="large-gallery-title">Coats & Jackets</span>
+      </a>
+      <a href="/ready-to-wear/casual-essentials/" class="large-gallery-card">
+        <img src="https://images.unsplash.com/photo-1485230895905-ec40ba36b9bc?q=80&w=1200" alt="Casual Essentials" loading="lazy">
+        <span class="large-gallery-title">Casual Essentials</span>
+      </a>
+    </section>
+
+    <!-- REPEAT 2 - BLOCK B: 4 SMALL GALLERIES -->
+    <section class="block-b-small">
+      <a href="/ready-to-wear/silk-blouses/" class="small-gallery-card">
+        <img src="https://images.unsplash.com/photo-1604014237800-1c9102c219da?q=80&w=600" alt="Silk Blouses" loading="lazy">
+        <span class="small-gallery-title">Silk Blouses</span>
+      </a>
+      <a href="/ready-to-wear/skirts/" class="small-gallery-card">
+        <img src="https://images.unsplash.com/photo-1583496661160-fb5886a0aaaa?q=80&w=600" alt="Skirts" loading="lazy">
+        <span class="small-gallery-title">Skirts</span>
+      </a>
+      <a href="/ready-to-wear/outerwear/" class="small-gallery-card">
+        <img src="https://images.unsplash.com/photo-1543076447-215ad9ba6923?q=80&w=600" alt="Outerwear" loading="lazy">
+        <span class="small-gallery-title">Outerwear</span>
+      </a>
+      <a href="/ready-to-wear/knitwear/" class="small-gallery-card">
+        <img src="https://images.unsplash.com/photo-1434389677669-e08b4cac3105?q=80&w=600" alt="Knitwear" loading="lazy">
+        <span class="small-gallery-title">Knitwear</span>
+      </a>
+    </section>
+
+    <!-- 3. LATEST OUTFITS EDITORIAL ARTICLES -->
+    <section class="latest-outfits-section">
+      <h2 class="section-editorial-heading">LATEST OUTFITS</h2>
+      
+      <div class="outfits-grid">
+        {{ $outfitPages := where site.RegularPages "Type" "outfits" }}
+        {{ range first 3 $outfitPages }}
+        <article class="outfit-card">
+          <a href="{{ .RelPermalink }}" class="outfit-media-wrap">
+            {{ with .Params.featured_image }}
+            <img src="{{ . }}" alt="{{ $.Title }}" loading="lazy">
+            {{ else }}
+            <img src="https://images.unsplash.com/photo-1490481651871-ab68de25d43d?q=80&w=800" alt="{{ .Title }}" loading="lazy">
+            {{ end }}
+          </a>
+          <h3 class="outfit-title"><a href="{{ .RelPermalink }}">{{ .Title }}</a></h3>
+          <p class="outfit-excerpt">{{ .Summary | truncate 130 }}</p>
+        </article>
+        {{ end }}
+      </div>
+    </section>
+
+    <!-- 4. LUXURY ANIMATED CROSS-LINKING BAR (PURE WHITE) -->
+    <section class="editorial-crosslink-bar">
+      <div class="crosslink-item">
+        <a href="/handbags/" class="crosslink-card">
+          <span class="crosslink-label">HANDBAGS & LEATHER GOODS</span>
+          <span class="crosslink-sub">Explore iconic tote bags, clutches & everyday leather staples</span>
+          <span class="hover-line"></span>
+        </a>
+      </div>
+      <div class="crosslink-item">
+        <a href="/shoes/" class="crosslink-card">
+          <span class="crosslink-label">FOOTWEAR EDIT</span>
+          <span class="crosslink-sub">Discover heels, minimalist sandals & statement boots</span>
+          <span class="hover-line"></span>
+        </a>
+      </div>
+      <div class="crosslink-item">
+        <a href="/jewelry-accessories/" class="crosslink-card">
+          <span class="crosslink-label">HIGH JEWELRY & ACCENTS</span>
+          <span class="crosslink-sub">Elevate your silhouette with fine jewelry & signature belts</span>
+          <span class="hover-line"></span>
+        </a>
+      </div>
+    </section>
+
+  </div>
+
+</main>
+
+<style>
+  /* Reset & Canvas Setup (0px Edge Spacing) */
+html, body {
+  margin: 0 !important;
+  padding: 0 !important;
+  width: 100%;
+  max-width: 100vw;
+  overflow-x: hidden;
+  background-color: #FFFFFF;
+  font-family: "Futura PT", "Helvetica Neue", Arial, sans-serif;
+}
+
+.elvoire-page-container {
+  width: 100vw;
+  margin: 0;
+  padding: 0;
+  padding-top: 50px;
+  box-sizing: border-box;
+}
+
+/* 1. Minimalist Sticky Header */
+.elvoire-sticky-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 50px;
+  z-index: 999;
+  background-color: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  padding: 0 30px;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.brand-logo {
+  font-family: "Futura PT", sans-serif;
+  font-size: 13px;
+  font-weight: 400;
+  letter-spacing: 4px;
+  color: #2E2E2E;
+  text-transform: uppercase;
+  text-decoration: none;
+}
+
+.header-center {
+  display: flex;
+  gap: 28px;
+}
+
+.header-center a {
+  font-family: "Futura PT", "Helvetica Neue", Arial, sans-serif;
+  font-size: 10px;
+  font-weight: 300;
+  letter-spacing: 2px;
+  color: #2E2E2E;
+  text-transform: uppercase;
+  text-decoration: none;
+  transition: opacity 0.3s ease;
+}
+
+.header-center a:hover {
+  opacity: 0.6;
+}
+
+.header-right {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+
+.icon-btn, .mobile-menu-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  display: flex;
+  align-items: center;
+}
+
+.mobile-menu-btn {
+  flex-direction: column;
+  gap: 4px;
+  width: 18px;
+}
+
+.mobile-menu-btn span {
+  width: 100%;
+  height: 1px;
+  background-color: #2E2E2E;
+}
+
+.desktop-only { display: flex; }
+.mobile-only { display: none; }
+
+/* Base state: Drawer hidden by default (fixes desktop gap bug) */
+.mobile-drawer {
+  display: none;
+}
+
+/* ========================================== */
+/* MOBILE ONLY & TABLET RESPONSIVE RULES      */
+/* ========================================== */
+@media (max-width: 1023px) {
+  /* Mobile Drawer Container */
+  .mobile-drawer {
+    display: flex !important;
+    position: fixed;
+    top: 0;
+    left: -100vw;
+    width: 100vw;
+    height: 100vh;
+    height: 100dvh;
+    background-color: #FFFFFF;
+    z-index: 10000;
+    padding: 20px 24px 32px 24px;
+    box-sizing: border-box;
+    flex-direction: column;
+    justify-content: flex-start;
+    transition: left 0.35s cubic-bezier(0.25, 1, 0.5, 1);
+    overflow-y: auto;
+  }
+
+  .mobile-drawer.active {
+    left: 0;
+  }
+
+  /* Drawer Top Header Bar */
+  .drawer-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 18px;
+    border-bottom: 1px solid #EAEAEA;
+  }
+
+  .drawer-header .brand-logo {
+    font-family: "Futura PT", sans-serif;
+    font-size: 18px;
+    font-weight: 600;
+    letter-spacing: 3px;
+    color: #111111;
+    text-transform: uppercase;
+  }
+
+  .close-btn {
+    background: none;
+    border: none;
+    font-size: 22px;
+    cursor: pointer;
+    color: #111111;
+    padding: 0;
+    line-height: 1;
+  }
+
+  /* Search Input Field */
+  .drawer-search-row {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 24px 0;
+    border-bottom: 1px solid #EAEAEA;
+    margin-top: 16px;
+  }
+
+  .drawer-search-input {
+    border: none;
+    outline: none;
+    width: 100%;
+    font-family: "Futura PT", sans-serif;
+    font-size: 16px;
+    color: #111111;
+    background: transparent;
+  }
+
+  .drawer-search-input::placeholder {
+    color: #888888;
+    font-weight: 300;
+  }
+
+  /* Main Category Navigation Stack */
+  .drawer-nav {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin-top: 12px;
+  }
+
+  /* Bottom Footer Category Links (Handbags, Shoes, Jewelry) - Pushed to Bottom */
+  .drawer-footer {
+    display: flex;
+    flex-direction: column;
+    border-top: 1px solid #EAEAEA;
+    padding-top: 18px;
+    margin-top: auto;
+  }
+
+  /* Force Font Sizes and Visibility */
+  .mobile-drawer .nav-item-row {
+    font-size: 40px !important;
+    font-weight: 300 !important;
+    color: #111111 !important;
+    letter-spacing: 2px !important;
+    text-transform: uppercase !important;
+    padding: 28px 0 !important;
+    display: block !important;
+    border-bottom: 1px solid #F0F0F0;
+  }
+
+  .mobile-drawer .drawer-search-input {
+    font-size: 15px !important;
+    color: #111111 !important;
+    padding: 12px 0 !important;
+  }
+
+  .mobile-drawer .footer-link {
+    font-size: 13px !important;
+    font-weight: 500 !important;
+    color: #666666 !important;
+    letter-spacing: 1.5px !important;
+    text-transform: uppercase !important;
+    display: block !important;
+    padding: 16px 0 !important;
+  }
+}
+
+/* ========================================== */
+/* STAGGERED "ONE-BY-ONE" ENTRANCE ANIMATION  */
+/* ========================================== */
+.mobile-drawer .nav-item-row,
+.mobile-drawer .footer-link {
+  opacity: 0;
+  transform: translateX(40px);
+  transition: opacity 0.45s ease, transform 0.45s ease;
+}
+
+.mobile-drawer.active .nav-item-row,
+.mobile-drawer.active .footer-link {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* Main Category Delays */
+.mobile-drawer.active .drawer-nav .nav-item-row:nth-child(1) { transition-delay: 0.15s; }
+.mobile-drawer.active .drawer-nav .nav-item-row:nth-child(2) { transition-delay: 0.20s; }
+.mobile-drawer.active .drawer-nav .nav-item-row:nth-child(3) { transition-delay: 0.25s; }
+.mobile-drawer.active .drawer-nav .nav-item-row:nth-child(4) { transition-delay: 0.30s; }
+.mobile-drawer.active .drawer-nav .nav-item-row:nth-child(5) { transition-delay: 0.35s; }
+.mobile-drawer.active .drawer-nav .nav-item-row:nth-child(6) { transition-delay: 0.40s; }
+
+/* Footer Category Delays (comes in after main nav) */
+.mobile-drawer.active .drawer-footer .footer-link:nth-child(1) { transition-delay: 0.45s; }
+.mobile-drawer.active .drawer-footer .footer-link:nth-child(2) { transition-delay: 0.50s; }
+.mobile-drawer.active .drawer-footer .footer-link:nth-child(3) { transition-delay: 0.55s; }
+
+  /* 2. Editorial Flow - 6px Micro Gap Everywhere */
+  .editorial-flow {
+    width: 100vw;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+
+  /* BLOCK A: 2 LARGE GALLERIES */
+  .block-a-large {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0px;
+    margin: 0;
+    padding: 0;
+    width: 100vw;
+  }
+
+  .large-gallery-card {
+    position: relative;
+    width: 50vw;
+    aspect-ratio: 3 / 3.8;
+    overflow: hidden;
+    background-color: #F5F5F3;
+    display: block;
+    text-decoration: none;
+  }
+
+  .large-gallery-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.8s ease;
+  }
+
+  .large-gallery-card:hover img {
+    transform: scale(1.03);
+  }
+
+  .large-gallery-title {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    z-index: 10;
+    font-family: "Futura PT", "Helvetica Neue", Arial, sans-serif;
+    font-size: 13px;
+    font-weight: 400;
+    color: #FFFFFF;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-shadow: 0 2px 6px rgba(0, 0, 0, 0.4);
+  }
+
+  /* BLOCK B: 4 SMALL GALLERIES */
+  .block-b-small {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    column-gap: 6px;
+    row-gap: 6px;
+    margin: 0;
+    padding: 0;
+    width: 100vw;
+    background-color: #FFFFFF;
+  }
+
+  .small-gallery-card {
+    position: relative;
+    width: calc((100vw - 18px) / 4);
+    aspect-ratio: 3 / 3.8;
+    overflow: hidden;
+    background-color: #F5F5F3;
+    display: block;
+    text-decoration: none;
+  }
+
+  .small-gallery-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.6s ease;
+  }
+
+  .small-gallery-card:hover img {
+    transform: scale(1.03);
+  }
+
+  .small-gallery-title {
+    position: absolute;
+    bottom: 12px;
+    left: 12px;
+    z-index: 10;
+    font-family: "Futura PT", "Helvetica Neue", Arial, sans-serif;
+    font-size: 10px;
+    font-weight: 300;
+    color: #2E2E2E;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    opacity: 0;
+    transform: translateY(4px);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+  }
+
+  .small-gallery-card:hover .small-gallery-title {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* 3. LATEST OUTFITS AUTO SECTION STYLES */
+  .latest-outfits-section {
+    width: 100vw;
+    box-sizing: border-box;
+    padding: 40px 18px 60px 18px;
+    background-color: #FFFFFF;
+  }
+
+  .section-editorial-heading {
+    text-align: center;
+    font-family: "Futura PT", "Helvetica Neue", Arial, sans-serif;
+    font-size: 14px;
+    font-weight: 300;
+    letter-spacing: 5px;
+    color: #2E2E2E;
+    text-transform: uppercase;
+    margin: 0 0 36px 0;
+  }
+
+  .outfits-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    column-gap: 18px;
+    row-gap: 24px;
+  }
+
+  .outfit-card {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .outfit-media-wrap {
+    display: block;
+    width: 100%;
+    aspect-ratio: 16 / 10;
+    overflow: hidden;
+    background-color: #F5F5F3;
+    margin-bottom: 14px;
+  }
+
+  .outfit-media-wrap img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.6s ease;
+  }
+
+  .outfit-card:hover .outfit-media-wrap img {
+    transform: scale(1.03);
+  }
+
+  .outfit-title {
+    font-family: "Futura PT", "Helvetica Neue", Arial, sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.4;
+    margin: 0 0 8px 0;
+  }
+
+  .outfit-title a {
+    color: #111111;
+    text-decoration: none;
+    transition: opacity 0.2s ease;
+  }
+
+  .outfit-title a:hover {
+    opacity: 0.6;
+  }
+
+  .outfit-excerpt {
+    font-family: "Helvetica Neue", Arial, sans-serif;
+    font-size: 11px;
+    font-weight: 300;
+    line-height: 1.6;
+    color: #666666;
+    margin: 0;
+  }
+
+  /* 4. PURE WHITE LUXURY ANIMATED CROSS-LINKING BAR */
+  .editorial-crosslink-bar {
+    width: 100vw;
+    box-sizing: border-box;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    border-top: 1px solid #EAEAEA;
+    border-bottom: 1px solid #EAEAEA;
+    padding: 55px 30px;
+    background-color: #FFFFFF; /* Pure White Canvas */
+    text-align: center;
+  }
+
+  .crosslink-item {
+    padding: 0 25px;
+    border-right: 1px solid #EAEAEA;
+    display: flex;
+    justify-content: center;
+  }
+
+  .crosslink-item:last-child {
+    border-right: none;
+  }
+
+  .crosslink-card {
+    position: relative;
+    text-decoration: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    padding: 10px 0;
+    transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+  }
+
+  /* Micro Lift Animation on Hover */
+  .crosslink-card:hover {
+    transform: translateY(-4px);
+  }
+
+  /* Bolder & Larger Luxury Typography */
+  .crosslink-label {
+    font-family: "Futura PT", "Helvetica Neue", Arial, sans-serif;
+    font-size: 14px; /* Increased Font Size */
+    font-weight: 500;
+    letter-spacing: 3px;
+    color: #111111;
+    text-transform: uppercase;
+    transition: color 0.4s ease, letter-spacing 0.4s ease;
+  }
+
+  /* Letter Spacing Expand & Gold Shimmer on Hover */
+  .crosslink-card:hover .crosslink-label {
+    letter-spacing: 4px;
+    background: linear-gradient(90deg, #111111 0%, #B89759 50%, #111111 100%);
+    background-size: 200% auto;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: goldShimmer 2.5s infinite linear;
+  }
+
+  @keyframes goldShimmer {
+    0% { background-position: 0% center; }
+    100% { background-position: 200% center; }
+  }
+
+  .crosslink-sub {
+    font-family: "Helvetica Neue", Arial, sans-serif;
+    font-size: 12px; /* Increased Font Size */
+    font-weight: 300;
+    color: #666666;
+    line-height: 1.5;
+    max-width: 280px;
+    transition: color 0.3s ease;
+  }
+
+  .crosslink-card:hover .crosslink-sub {
+    color: #222222;
+  }
+
+  /* Animated Expanding Underline */
+  .hover-line {
+    position: absolute;
+    bottom: 0;
+    width: 0%;
+    height: 1px;
+    background-color: #111111;
+    transition: width 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+  }
+
+  .crosslink-card:hover .hover-line {
+    width: 60%;
+  }
+
+  /* MOBILE RESPONSIVE RULES */
+  @media (max-width: 1023px) {
+    .desktop-only { display: none !important; }
+    .mobile-only { display: flex !important; }
+
+    .elvoire-sticky-header {
+      padding: 0 16px;
+      height: 70px;
+    }
+
+    .elvoire-page-container {
+      padding-top: 70px;
+    }
+
+    .editorial-flow {
+      gap: 4px;
+    }
+
+    .block-a-large {
+      grid-template-columns: 1fr;
+      row-gap: 4px;
+    }
+
+    .large-gallery-card {
+      width: 100vw;
+      aspect-ratio: 3 / 3.8;
+    }
+
+    .block-b-small {
+      grid-template-columns: repeat(2, 1fr);
+      column-gap: 4px;
+      row-gap: 4px;
+    }
+
+    .small-gallery-card {
+      width: calc((100vw - 4px) / 2);
+      aspect-ratio: 3 / 3.8;
+    }
+
+    .small-gallery-title {
+      opacity: 1 !important;
+      transform: none !important;
+      bottom: 10px;
+      left: 10px;
+    }
+
+    .latest-outfits-section {
+      padding: 24px 12px 40px 12px;
+    }
+
+    .outfits-grid {
+      grid-template-columns: 1fr;
+      row-gap: 28px;
+    }
+
+    .editorial-crosslink-bar {
+      grid-template-columns: 1fr;
+      row-gap: 32px;
+      padding: 40px 20px;
+    }
+
+    .crosslink-item {
+      border-right: none;
+      border-bottom: 1px solid #EAEAEA;
+      padding-bottom: 24px;
+    }
+
+    .crosslink-item:last-child {
+      border-bottom: none;
+      padding-bottom: 0;
+    }
+  }
+</style>
+
+<!-- ÉLVOIRE CLEAN VERTICAL NEWSLETTER BAR -->
+<section class="elvoire-newsletter-block">
+  <div class="newsletter-block-container">
+    
+    <h3 class="newsletter-heading">JOIN THE MAISON</h3>
+    
+    <p class="newsletter-desc">
+      Subscribe to receive curated editorial insights, luxury fashion commentary, and exclusive platform drops.
+    </p>
+
+    <div class="newsletter-action">
+      <a href="/newsletter/" class="elvoire-btn">BECOME A SUBSCRIBER</a>
+    </div>
+
+  </div>
+</section>
+
+<style>
+  .elvoire-newsletter-block {
+    width: 100vw;
+    background-color: #FFFFFF;
+    color: #111111;
+    padding: 45px 20px;
+    box-sizing: border-box;
+    border-top: 1px solid #EAEAEA;
+    font-family: "Futura PT", "Helvetica Neue", Arial, sans-serif;
+  }
+
+  .newsletter-block-container {
+    max-width: 650px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .newsletter-heading {
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    color: #111111;
+    margin: 0 0 10px 0;
+  }
+
+  .newsletter-desc {
+    font-size: 11px;
+    font-weight: 300;
+    color: #555555;
+    line-height: 1.6;
+    margin: 0 0 20px 0;
+  }
+
+  .elvoire-btn {
+    display: inline-block;
+    padding: 12px 32px;
+    border: 1px solid #111111;
+    background-color: transparent;
+    color: #111111;
+    text-decoration: none;
+    font-size: 10px;
+    letter-spacing: 2px;
+    font-weight: 500;
+    text-transform: uppercase;
+    transition: all 0.3s ease;
+  }
+
+  .elvoire-btn:hover {
+    background-color: #111111;
+    color: #FFFFFF;
+  }
+
+  @media (max-width: 768px) {
+    .elvoire-newsletter-block {
+      padding: 35px 20px;
+    }
+  }
+</style>
+
+<!-- ========================================== -->
+<!-- 1. FOOTER BAR WITH NAVIGATION & FAQ TRIGGER -->
+<!-- ========================================== -->
+<footer class="elvoire-minimal-footer">
+  <div class="footer-left">
+    <span>© 2026 ÉLVOIRE. ALL RIGHTS RESERVED.</span>
+  </div>
+
+  <div class="footer-right">
+    <nav class="footer-inline-nav">
+      <a href="/about-us/">About Maison</a>
+      <span class="nav-dot">•</span>
+      <a href="/contact/">Contact Us</a>
+      <span class="nav-dot">•</span>
+      <a href="/privacy-policy/">Privacy Policy</a>
+      <span class="nav-dot">•</span>
+      <a href="/terms-conditions/">Terms & Conditions</a>
+      <span class="nav-dot">•</span>
+      <button class="faq-trigger-btn" onclick="openFaqModal()">
+        <span>FAQ & STYLING GUIDE</span>
+        <svg class="chevron-icon" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+          <path d="M6 9l6 6 6-6"/>
+        </svg>
+      </button>
+    </nav>
+  </div>
+</footer>
+
+<!-- ========================================== -->
+<!-- 2. FULLSCREEN FAQ & ARTICLE OVERLAY CANVAS -->
+<!-- ========================================== -->
+<div class="faq-modal-overlay" id="faqModalOverlay">
+  <div class="faq-canvas-container">
+    
+    <!-- Canvas Navigation Bar -->
+    <div class="canvas-top-bar">
+      <button class="back-btn" onclick="closeFaqModal()">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+          <path d="M19 12H5M12 19l-7-7 7-7"/>
+        </svg>
+        <span>BACK</span>
+      </button>
+
+      <a href="/contact" class="contact-pill-btn">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+          <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+          <polyline points="22,6 12,13 2,6"/>
+        </svg>
+        <span>more questions? contact us</span>
+      </a>
+    </div>
+
+    <!-- Section 1: Accordion FAQ Header & List -->
+    <div class="canvas-header">
+      <h1 class="canvas-title">Frequently Asked<br>Questions</h1>
+    </div>
+
+    <div class="canvas-faq-list">
+      
+      <div class="canvas-faq-item">
+        <button class="canvas-faq-q" onclick="toggleCanvasFaq(this)">
+          <span>1. How do you style an oversized blazer without losing structural shape?</span>
+          <span class="q-icon">+</span>
+        </button>
+        <div class="canvas-faq-a">
+          <p>The key to styling boxy tailored outerwear lies in internal frame proportion. Anchor exaggerated shoulder silhouettes with streamlined base layers like high-waisted cigarette trousers or a fitted silk camisole. Utilizing a wide calfskin leather belt at the natural waistline defines shape while preserving sharp lapel lines and structural tailoring integrity.</p>
+        </div>
+      </div>
+
+      <div class="canvas-faq-item">
+        <button class="canvas-faq-q" onclick="toggleCanvasFaq(this)">
+          <span>2. What are the essential rules for building a high-contrast monochromatic outfit?</span>
+          <span class="q-icon">+</span>
+        </button>
+        <div class="canvas-faq-a">
+          <p>Successful monochromatic dressing relies on tactile depth rather than shade variation. Contrast matte natural fibers like heavy virgin wool or ribbed cashmere against light-reflective textiles such as silk satin or polished leather. Layering rich tonal depth within a single color palette keeps minimal ensembles dimensional rather than flat.</p>
+        </div>
+      </div>
+
+      <div class="canvas-faq-item">
+        <button class="canvas-faq-q" onclick="toggleCanvasFaq(this)">
+          <span>3. Which footwear best pairs with wide-leg tailored trousers?</span>
+          <span class="q-icon">+</span>
+        </button>
+        <div class="canvas-faq-a">
+          <p>Length and hem drop dictate the shoe choice. For floor-sweeping tailored trousers, pointed-toe leather pumps or sharp angular ankle boots elongate the leg line visually. When styling slightly cropped wide-leg cuts, structured leather loafers or minimal slingback heels balance volume with crisp ankle exposure.</p>
+        </div>
+      </div>
+
+      <div class="canvas-faq-item">
+        <button class="canvas-faq-q" onclick="toggleCanvasFaq(this)">
+          <span>4. How do you seamlessly transition a luxury daytime look into evening wear?</span>
+          <span class="q-icon">+</span>
+        </button>
+        <div class="canvas-faq-a">
+          <p>Transitioning daytime tailoring to evening elegance comes down to focal accessories and outerwear swaps. Trade oversized structured totes for a minimalist leather clutch, swap day loafers for stiletto pumps, and drape a sharply cut tuxedo jacket over casual base pieces to elevate the entire aesthetic instantly.</p>
+        </div>
+      </div>
+
+      <div class="canvas-faq-item">
+        <button class="canvas-faq-q" onclick="toggleCanvasFaq(this)">
+          <span>5. How do you combine contrasting luxury textures in a single ensemble?</span>
+          <span class="q-icon">+</span>
+        </button>
+        <div class="canvas-faq-a">
+          <p>Limit your material canvas to three core textures per outfit. Pair soft, organic finishes like brushed mohair or suede with crisp poplin shirting or fluid silk satin. Maintaining a neutral, muted color palette allows heavy and light textiles to complement each other without visual clutter.</p>
+        </div>
+      </div>
+
+      <div class="canvas-faq-item">
+        <button class="canvas-faq-q" onclick="toggleCanvasFaq(this)">
+          <span>6. Which foundational garments define a timeless minimalist capsule wardrobe?</span>
+          <span class="q-icon">+</span>
+        </button>
+        <div class="canvas-faq-a">
+          <p>A refined capsule wardrobe comprises structured investment pieces: a double-breasted tailored blazer, crisp cotton poplin button-downs, fluid high-waisted trousers, a classic belted trench coat, a structured shoulder bag, and handcrafted leather loafers that anchor effortless daily rotation.</p>
+        </div>
+      </div>
+
+      <div class="canvas-faq-item">
+        <button class="canvas-faq-q" onclick="toggleCanvasFaq(this)">
+          <span>7. How should high-end luxury garments be cared for to ensure longevity?</span>
+          <span class="q-icon">+</span>
+        </button>
+        <div class="canvas-faq-a">
+          <p>Preserving garment longevity requires minimal chemical exposure and proper climate storage. Always utilize wide cedarwood suit hangers for structured tailoring to hold shoulder shape. Spot-clean delicate silk or wool fibers, rely on specialized eco-friendly dry cleaning sparingly, and store fine knits folded flat to prevent fabric stretch.</p>
+        </div>
+      </div>
+
+      <div class="canvas-faq-item">
+        <button class="canvas-faq-q" onclick="toggleCanvasFaq(this)">
+          <span>8. What defines true quiet luxury and understated editorial design?</span>
+          <span class="q-icon">+</span>
+        </button>
+        <div class="canvas-faq-a">
+          <p>Quiet luxury prioritizes impeccable craftsmanship, superior fabric weight, and precise tailoring over overt logos or prominent branding. It focuses on clean architectural cuts, subtle tonal nuances, and timeless longevity that speaks through silent quality rather than loud embellishment.</p>
+        </div>
+      </div>
+
+      <div class="canvas-faq-item">
+        <button class="canvas-faq-q" onclick="toggleCanvasFaq(this)">
+          <span>9. How can you style leather apparel without overwhelming a delicate frame?</span>
+          <span class="q-icon">+</span>
+        </button>
+        <div class="canvas-faq-a">
+          <p>Balance heavy leather garments by contrasting them against soft, fluid fabrications. Pair a structured leather trench coat or tailored trousers with lightweight sheer knitwear, silk crepe blouses, or minimalist footwear to soften the visual weight while maintaining a strong sartorial edge.</p>
+        </div>
+      </div>
+
+      <div class="canvas-faq-item">
+        <button class="canvas-faq-q" onclick="toggleCanvasFaq(this)">
+          <span>10. How do subtle details like hardware and stitching elevate basic wardrobe pieces?</span>
+          <span class="q-icon">+</span>
+        </button>
+        <div class="canvas-faq-a">
+          <p>Refined accents like horn buttons, hand-stitched pick seams, brushed metallic hardware, and clean French seams transform basic silhouettes into luxury statements. These subtle structural markers reflect authentic garment construction and elevate everyday wardrobe foundations effortlessly.</p>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Section Separator Line -->
+    <hr class="canvas-section-divider">
+
+    <!-- Section 2: Universal Styling Guide Article -->
+<article class="editorial-guide-container" itemscope itemtype="https://schema.org/Article">
+  
+  <header class="guide-header">
+    <span class="guide-eyebrow">EDITORIAL STYLING GUIDE</span>
+    <h1 class="guide-main-title" itemprop="headline">"Does This Even Match?" — The Styling Rules That End the Guesswork Forever</h1>
+    <p class="guide-lead-text">Fashion trends fluctuate every season, but the outfits that consistently look right follow a set of universal laws that never change.</p>
+  </header>
+
+  <!-- Introduction -->
+  <section class="guide-section">
+    <h2 class="section-title">Introduction: Why Some Outfits Just "Work"</h2>
+    <p>Have you ever seen someone walk into a room and instantly look put-together — without looking like they tried too hard?</p>
+    <p>That's not luck. It's not even taste, really.</p>
+    <p>It's <strong>structure</strong>.</p>
+    <p>Fashion trends come and go every season, but the outfits that consistently look right follow a set of rules that never change. These rules aren't tied to a brand, a price tag, or a specific body type. They're mathematical, psychological, and visual — and once you understand them, styling stops feeling like guesswork.</p>
+    <p>This guide breaks down the universal principles behind dressing well — the ones stylists rely on quietly, season after season.</p>
+  </section>
+
+  <!-- Why People Struggle -->
+  <section class="guide-section">
+    <h2 class="section-title">Why Most People Struggle With Styling</h2>
+    <p>Before we get into the rules, let's talk about the root problem.</p>
+    <p>Most styling mistakes don't come from a lack of fashion sense. They come from fear:</p>
+    <ul>
+      <li>Fear of standing out too much</li>
+      <li>Fear of getting it "wrong"</li>
+      <li>Fear of spending money on the wrong pieces</li>
+    </ul>
+    <p>Here's the truth: outfits fail for very specific, fixable reasons — not because someone lacks "natural style."</p>
+  </section>
+
+  <!-- The Real Reason -->
+  <section class="guide-section">
+    <h2 class="section-title">The Real Reason Outfits Feel "Off"</h2>
+    <p>Nine times out of ten, an outfit feels wrong because of one (or more) of these key issues:</p>
+    <ul>
+      <li>Poor fit — too tight, too loose, or wrong length</li>
+      <li>Competing proportions — everything looks the same size and shape</li>
+      <li>Random color choices with no relationship to each other</li>
+      <li>Flat texture — everything is the same fabric weight</li>
+    </ul>
+    <p>None of these require expensive clothes to fix. They require <strong>awareness</strong>.</p>
+  </section>
+
+  <!-- Deconstructing Styling Anxiety -->
+  <section class="guide-section">
+    <h2 class="section-title">Deconstructing Styling Anxiety</h2>
+    <p>Let's name the fears out loud — because solving a fear starts with acknowledging it.</p>
+    
+    <h3 class="sub-heading">"Am I Overdressed or Underdressed?"</h3>
+    <p>This fear usually comes from not understanding context dressing — matching your outfit's formality to the occasion, not the calendar date or trend cycle.</p>
+    <p>A simple fix: <strong>match your most formal piece to the event, then build down from there.</strong> If in doubt, one elevated piece (a blazer, structured bag, or clean shoe) instantly balances a casual outfit for semi-formal settings.</p>
+
+    <h3 class="sub-heading">"Will This Combination Look Weird?"</h3>
+    <p>This fear usually comes from mixing too many "loud" elements at once — bold color, bold pattern, and bold texture together.</p>
+    <p>The fix: <strong>only let one element be loud at a time.</strong> If your top is bold, keep the bottom simple. If your pattern is busy, keep the color palette quiet.</p>
+
+    <h3 class="sub-heading">Fit vs. Brand: What Actually Matters</h3>
+    <p>Here's something worth remembering:</p>
+    <blockquote class="guide-quote">
+      <strong>A $30 top that fits perfectly will always look better than a $300 top that doesn't.</strong>
+    </blockquote>
+    <p>Fit affects how fabric falls on the body, how proportions read, and how confident you feel wearing it. Brand names don't fix bad fit. Tailoring does.</p>
+  </section>
+
+  <!-- The Universal Law of Proportion -->
+  <section class="guide-section">
+    <h2 class="section-title">The Universal Law of Proportion</h2>
+    <p>This is the single most underrated styling rule — and it works on every body type.</p>
+
+    <h3 class="sub-heading">The 1/3 to 2/3 Rule</h3>
+    <p>The human eye finds <strong>asymmetry more pleasing than an even split</strong>. This is why outfits divided exactly in half (50/50) often look flat or boxy.</p>
+    <p>Instead, aim for a <strong>1/3 to 2/3 visual ratio</strong> between top and bottom halves of your outfit. <strong>In practice, this looks like:</strong></p>
+    <ul>
+      <li>A cropped jacket (shorter portion) with high-waisted trousers (longer portion)</li>
+      <li>A long cardigan (longer portion) over a fitted top and shorts (shorter portion)</li>
+      <li>Tucking in a shirt to shift where the "visual break" happens</li>
+    </ul>
+    <p>This single trick instantly makes outfits look intentional — even with basic pieces.</p>
+
+    <h3 class="sub-heading">Silhouette Balancing: Loose vs. Structured</h3>
+    <p>Another proportion rule that never fails: <strong>if one piece is loose, balance it with something structured.</strong></p>
+    <ul>
+      <li>Oversized sweater → pair with fitted bottoms</li>
+      <li>Wide-leg trousers → pair with a fitted top</li>
+      <li>Flowy dress → add a structured blazer or belt</li>
+    </ul>
+    <p>When both pieces are loose, the outfit loses shape. When both are tight, it can look stiff. Balance creates flow.</p>
+  </section>
+
+  <!-- Color Theory, Simplified -->
+  <section class="guide-section">
+    <h2 class="section-title">Color Theory, Simplified</h2>
+    <p>Color feels intimidating, but there's one formula that removes almost all the guesswork.</p>
+
+    <h3 class="sub-heading">The 60-30-10 Rule</h3>
+    <p>This principle comes from interior design, and it works just as well on the body:</p>
+    <ul>
+      <li><strong>60%</strong> — your dominant/base color (neutral tones work great here)</li>
+      <li><strong>30%</strong> — your secondary color (adds contrast or depth)</li>
+      <li><strong>10%</strong> — your accent color (a small pop — shoes, bag, jewelry, lip color)</li>
+    </ul>
+    <p>This formula is why monochrome and neutral-based outfits always look expensive — the ratio is naturally balanced, even without "trying."</p>
+
+    <h3 class="sub-heading">Building a Foolproof Palette</h3>
+    <p>A quick trust-building tip: build your wardrobe around <strong>2-3 neutral bases</strong> (black, white, beige, navy) and let seasonal colors act as your accents. This alone eliminates most "does this match?" anxiety.</p>
+  </section>
+
+  <!-- Texture & Depth -->
+  <section class="guide-section">
+    <h2 class="section-title">Texture & Depth: The Overlooked Detail</h2>
+    <p>Even a perfectly color-coordinated outfit can look boring if every piece has the same texture.</p>
+
+    <h3 class="sub-heading">Why Flat Outfits Look Boring</h3>
+    <p>If everything is smooth cotton, or everything is the same shine, the eye has nothing to explore. This is what makes an outfit feel "flat" even when the colors are right.</p>
+
+    <h3 class="sub-heading">Mixing Textures the Right Way</h3>
+    <p>Add depth by combining:</p>
+    <ul>
+      <li>Smooth + textured (silk top with a knit cardigan)</li>
+      <li>Matte + shine (denim with a satin blouse)</li>
+      <li>Structured + soft (leather jacket with a flowy dress)</li>
+    </ul>
+    <p>This is a favorite trick among stylists specifically because it adds richness without adding more color or pattern.</p>
+  </section>
+
+  <!-- The Anchor Elements -->
+  <section class="guide-section">
+    <h2 class="section-title">The Anchor Elements</h2>
+    <p>Every outfit needs a visual "anchor" — something that grounds the entire look.</p>
+
+    <h3 class="sub-heading">Shoes as Visual Anchors</h3>
+    <p>Shoes carry more visual weight than people realize. A clean, well-fitted shoe can elevate a casual outfit instantly, while a worn-out or mismatched shoe can undo an otherwise great look.</p>
+    <p>Rule of thumb: <strong>shoes should either match your outfit's formality or intentionally contrast it</strong> (like sneakers with a dress for a relaxed-luxury vibe) — never accidentally clash with it.</p>
+
+    <h3 class="sub-heading">Outerwear as Structure</h3>
+    <p>A blazer, coat, or jacket often becomes the "frame" of an outfit. It's usually the first thing people notice — which is why investing in well-fitted outerwear pays off more than almost any other category.</p>
+  </section>
+
+  <!-- Fit Precision & Everyday Maintenance -->
+  <section class="guide-section">
+    <h2 class="section-title">Fit Precision & Everyday Maintenance</h2>
+    <p>Style isn't just about buying the right pieces — it's about keeping them looking their best:</p>
+    <ul>
+      <li>Get key pieces tailored (waist, hem, sleeves) — even affordable clothing looks premium when it fits properly</li>
+      <li>Steam or iron before wearing — wrinkles undo even the best outfit combinations</li>
+      <li>Rotate footwear — this extends shoe life and keeps shape intact</li>
+      <li>Store knitwear folded, not hung — hanging stretches the fabric over time</li>
+    </ul>
+    <p>Small habits like these are what separate "put-together" from "thrown together."</p>
+  </section>
+
+  <!-- Building Your Own Styling System -->
+  <section class="guide-section">
+    <h2 class="section-title">Building Your Own Styling System</h2>
+    <p>Once you understand these principles, styling becomes less about rules and more about pattern recognition.</p>
+    <p>Here's a simple mental checklist you can run through before leaving the house:</p>
+    <ol class="checklist-list">
+      <li>Is my top-to-bottom ratio roughly 1/3 to 2/3?</li>
+      <li>Do I have one loose element and one structured element?</li>
+      <li>Am I following (roughly) a 60-30-10 color split?</li>
+      <li>Is there at least one texture contrast?</li>
+      <li>Does my shoe match the formality of the outfit?</li>
+    </ol>
+    <p>If most of these are checked, the outfit will almost always look intentional — regardless of trend, season, or price point.</p>
+  </section>
+
+  <!-- Frequently Asked Questions (Inline Guide FAQ) -->
+  <section class="guide-section faq-guide-block">
+    <h2 class="section-title">Frequently Asked Questions</h2>
+    
+    <h3 class="sub-heading">Q: Do these styling rules work for every body type?</h3>
+    <p>Yes. Proportion and balance principles are based on visual perception, not body shape — they simply get applied differently depending on where you want to draw attention.</p>
+
+    <h3 class="sub-heading">Q: Can these principles be used for both casual and formal outfits?</h3>
+    <p>Absolutely. The 1/3-2/3 ratio, color balance, and texture mixing apply equally to a daily outfit and a formal event look — only the fabric and formality level change.</p>
+
+    <h3 class="sub-heading">Q: Do I need expensive clothes for this to work?</h3>
+    <p>No. These are structural principles, not brand-dependent ones. A well-fitted, well-balanced basic outfit will always outperform an expensive but poorly structured one.</p>
+
+    <h3 class="sub-heading">Q: What's the fastest way to fix a "boring" outfit?</h3>
+    <p>Add texture contrast or adjust your top-to-bottom ratio. These two fixes solve the majority of "something feels off" situations.</p>
+  </section>
+
+  <!-- Final Thought -->
+  <footer class="guide-footer-callout">
+    <h2 class="section-title">Final Thought</h2>
+    <p>Style isn't about knowing every trend — it's about understanding a small set of visual truths that never go out of style.</p>
+    <p>Once these principles become second nature, dressing stops being a daily decision filled with doubt. It becomes a simple, repeatable formula you can trust — no matter what's "in" this season.</p>
+  </footer>
+  
+</article>
+
+
+  </div>
+</div>
+
+<!-- ========================================== -->
+<!-- 3. GOOGLE SCHEMA FOR FAQ & ARTICLE -->
+<!-- ========================================== -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "How do you style an oversized blazer without losing structural shape?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Anchor exaggerated shoulder silhouettes with streamlined base layers like high-waisted cigarette trousers or a fitted silk camisole. Utilizing a wide calfskin leather belt at the natural waistline defines shape."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What are the essential rules for building a high-contrast monochromatic outfit?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Contrast matte natural fibers like heavy virgin wool or ribbed cashmere against light-reflective textiles such as silk satin or polished leather."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Which footwear best pairs with wide-leg tailored trousers?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Pointed-toe leather pumps or sharp angular ankle boots elongate the leg line visually for floor-sweeping trousers, while structured leather loafers work best for cropped cuts."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How do you seamlessly transition a luxury daytime look into evening wear?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Trade oversized structured totes for a minimalist leather clutch, swap day loafers for stiletto pumps, and drape a sharply cut tuxedo jacket over casual base pieces."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How do you combine contrasting luxury textures in a single ensemble?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Limit your material canvas to three core textures per outfit like brushed mohair or suede paired with crisp poplin shirting or fluid silk satin."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Which foundational garments define a timeless minimalist capsule wardrobe?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "A double-breasted tailored blazer, crisp cotton poplin button-downs, fluid high-waisted trousers, a classic belted trench coat, a structured shoulder bag, and handcrafted leather loafers."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How should high-end luxury garments be cared for to ensure longevity?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Utilize wide cedarwood suit hangers for structured tailoring, spot-clean delicate silk or wool fibers, rely on specialized dry cleaning sparingly, and store fine knits folded flat."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What defines true quiet luxury and understated editorial design?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Quiet luxury prioritizes impeccable craftsmanship, superior fabric weight, and precise tailoring over overt logos, focusing on clean architectural cuts and silent quality."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How can you style leather apparel without overwhelming a delicate frame?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Pair structured leather garments with lightweight sheer knitwear, silk crepe blouses, or minimalist footwear to soften visual weight."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How do subtle details like hardware and stitching elevate basic wardrobe pieces?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Refined accents like horn buttons, hand-stitched pick seams, brushed metallic hardware, and clean French seams reflect authentic garment construction."
+          }
+        }
+      ]
+    },
+    {
+      "@type": "Article",
+      "headline": "\"Does This Even Match?\" — The Styling Rules That End the Guesswork Forever",
+      "description": "A universal styling guide breaking down the structural, visual, and mathematical principles behind dressing well effortlessly.",
+      "author": {
+        "@type": "Organization",
+        "name": "ÉLVOIRE"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "ÉLVOIRE"
+      }
+    }
+  ]
+}
+</script>
+
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&display=swap');
+
+  /* FOOTER CONTAINER */
+  .elvoire-minimal-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 24px 50px;
+    background-color: #FFFFFF;
+    border-top: 1px solid #EEEEEE;
+    font-family: "Futura PT", "Helvetica Neue", Arial, sans-serif;
+    font-size: 11px;
+    letter-spacing: 1.8px;
+    color: #111111;
+  }
+
+  .footer-right {
+    display: flex;
+    align-items: center;
+  }
+
+  .footer-inline-nav {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    white-space: nowrap;
+  }
+
+  .footer-inline-nav a {
+    font-size: 11px;
+    font-weight: 300;
+    letter-spacing: 1.5px;
+    color: #222222;
+    text-decoration: none;
+    transition: color 0.2s ease;
+  }
+
+  .footer-inline-nav a:hover {
+    color: #888888;
+  }
+
+  .nav-dot {
+    font-size: 7px;
+    color: #CCCCCC;
+  }
+
+  .faq-trigger-btn {
+    background: none;
+    border: none;
+    font-family: inherit;
+    font-size: 11px;
+    letter-spacing: 1.5px;
+    color: #111111;
+    font-weight: 400;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    padding: 0;
+    transition: opacity 0.2s ease;
+  }
+
+  .faq-trigger-btn:hover {
+    opacity: 0.6;
+  }
+
+  /* OVERLAY CANVAS */
+  .faq-modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: #E8E3DC;
+    z-index: 99999;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.4s ease, visibility 0.4s ease;
+    overflow-y: auto;
+  }
+
+  .faq-modal-overlay.active {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  .faq-canvas-container {
+    max-width: 950px;
+    margin: 0 auto;
+    padding: 50px 40px 100px 40px;
+    font-family: "Futura PT", "Helvetica Neue", Arial, sans-serif;
+  }
+
+  .canvas-top-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 50px;
+  }
+
+  .back-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 11px;
+    letter-spacing: 2px;
+    font-weight: 500;
+    color: #222222;
+    transition: opacity 0.2s ease;
+  }
+
+  .back-btn:hover {
+    opacity: 0.6;
+  }
+
+  .contact-pill-btn {
+    background-color: #FFFFFF;
+    border: 1px solid #D6D0C7;
+    border-radius: 30px;
+    padding: 10px 22px;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+    color: #333333;
+    font-size: 11px;
+    letter-spacing: 1px;
+    font-weight: 400;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.03);
+    transition: transform 0.2s ease;
+  }
+
+  .contact-pill-btn:hover {
+    transform: translateY(-2px);
+  }
+
+  .canvas-header {
+    margin-bottom: 40px;
+  }
+
+  .canvas-title {
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-size: 48px;
+    line-height: 1.05;
+    font-weight: 400;
+    color: #222222;
+    margin: 0;
+  }
+
+  /* ACCORDION FAQ */
+  .canvas-faq-list {
+    border-top: 1px solid #C8C2B8;
+  }
+
+  .canvas-faq-item {
+    border-bottom: 1px solid #C8C2B8;
+  }
+
+  .canvas-faq-q {
+    width: 100%;
+    background: transparent;
+    border: none;
+    padding: 22px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    text-align: left;
+    font-family: inherit;
+    font-size: 13px;
+    letter-spacing: 0.8px;
+    color: #222222;
+  }
+
+  .q-icon {
+    font-size: 18px;
+    color: #444444;
+  }
+
+  .canvas-faq-a {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.35s cubic-bezier(0.25, 1, 0.5, 1);
+  }
+
+  .canvas-faq-a p {
+    font-size: 13px;
+    line-height: 1.7;
+    color: #555555;
+    margin: 0 0 20px 0;
+    font-weight: 300;
+  }
+
+  .canvas-section-divider {
+    border: 0;
+    height: 1px;
+    background: #C8C2B8;
+    margin: 70px 0 60px 0;
+  }
+
+  /* EDITORIAL GUIDE ARTICLE STYLING */
+  .editorial-guide-container {
+    color: #222222;
+  }
+
+  .guide-header {
+    margin-bottom: 45px;
+  }
+
+  .guide-eyebrow {
+    font-size: 10px;
+    letter-spacing: 2px;
+    font-weight: 500;
+    color: #666666;
+    display: block;
+    margin-bottom: 12px;
+  }
+
+  .guide-main-title {
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-size: 42px;
+    line-height: 1.15;
+    font-weight: 400;
+    margin: 0 0 16px 0;
+  }
+
+  .guide-lead-text {
+    font-size: 15px;
+    line-height: 1.6;
+    color: #444444;
+    font-weight: 300;
+    margin: 0;
+  }
+
+  .guide-section {
+    margin-bottom: 35px;
+  }
+
+  .section-title {
+    font-family: "Futura PT", "Helvetica Neue", Arial, sans-serif;
+    font-size: 14px;
+    letter-spacing: 1.5px;
+    font-weight: 600;
+    text-transform: uppercase;
+    color: #111111;
+    margin: 0 0 14px 0;
+  }
+
+  .sub-heading {
+    font-family: "Futura PT", "Helvetica Neue", Arial, sans-serif;
+    font-size: 12px;
+    letter-spacing: 1px;
+    font-weight: 600;
+    text-transform: uppercase;
+    color: #333333;
+    margin: 20px 0 8px 0;
+  }
+
+  .editorial-guide-container p {
+    font-size: 13px;
+    line-height: 1.75;
+    color: #444444;
+    font-weight: 300;
+    margin: 0 0 14px 0;
+  }
+
+  .editorial-guide-container ul, .editorial-guide-container ol {
+    margin: 0 0 18px 0;
+    padding-left: 20px;
+  }
+
+  .editorial-guide-container li {
+    font-size: 13px;
+    line-height: 1.7;
+    color: #444444;
+    font-weight: 300;
+    margin-bottom: 6px;
+  }
+
+  .guide-footer-callout {
+    background-color: #DFD9D0;
+    padding: 30px;
+    border-radius: 4px;
+    margin-top: 40px;
+  }
+
+  .guide-footer-callout p:last-child {
+    margin-bottom: 0;
+  }
+
+  @media (max-width: 900px) {
+    .elvoire-minimal-footer {
+      flex-direction: column;
+      gap: 18px;
+      padding: 25px 20px;
+      text-align: center;
+    }
+    .footer-inline-nav {
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 12px;
+    }
+    .nav-dot {
+      display: none;
+    }
+    .faq-canvas-container {
+      padding: 30px 20px 60px 20px;
+    }
+    .canvas-title {
+      font-size: 34px;
+    }
+    .guide-main-title {
+      font-size: 30px;
+    }
+  }
+  .guide-quote {
+  border-left: 3px solid #000;
+  padding-left: 20px;
+  margin: 25px 0;
+  font-size: 18px;
+  font-style: italic;
+  color: #333;
+}
+
+.editorial-guide-container strong {
+  font-weight: 600;
+}
+</style>
+
+<script>
+  function openFaqModal() {
+    document.getElementById('faqModalOverlay').classList.add('active');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeFaqModal() {
+    document.getElementById('faqModalOverlay').classList.remove('active');
+    document.body.style.overflow = 'auto';
+  }
+
+  function toggleCanvasFaq(button) {
+    const item = button.parentElement;
+    const icon = button.querySelector('.q-icon');
+    const answer = item.querySelector('.canvas-faq-a');
+    const isActive = item.classList.contains('active');
+
+    document.querySelectorAll('.canvas-faq-item').forEach(el => {
+      el.classList.remove('active');
+      el.querySelector('.q-icon').textContent = '+';
+      el.querySelector('.canvas-faq-a').style.maxHeight = null;
+    });
+
+    if (!isActive) {
+      item.classList.add('active');
+      icon.textContent = '−';
+      answer.style.maxHeight = answer.scrollHeight + "px";
+    }
+  }
+</script>
